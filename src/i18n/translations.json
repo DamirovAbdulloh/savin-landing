@@ -1,0 +1,807 @@
+{
+  "en": {
+    "nav": {
+      "howItWorks": "How it works",
+      "benefits": "Benefits",
+      "faq": "FAQ",
+      "applyButton": "Apply Now"
+    },
+    "hero": {
+      "badge": "For Businesses",
+      "title": "Connect a new flow of customers to your store",
+      "description": "Savin members are thousands of active shoppers looking for discounts. Apply now, and we'll start the partnership within 24 hours.",
+      "applyButton": "Apply Now",
+      "howItWorksButton": "How it works",
+      "stats": {
+        "partners": "400+ partners",
+        "members": "50,000+ active members",
+        "free": "Free to join"
+      }
+    },
+    "phoneMock": {
+      "time": "9:41",
+      "category": "Savin",
+      "filterNearby": "Nearby",
+      "filterTopRated": "Top Rated",
+      "resultsCount": "24 businesses found",
+      "businesses": [
+        {
+          "name": "Fast Food",
+          "location": "Chilonzor",
+          "distance": "0.4 km",
+          "rating": "4.9",
+          "time": "1 hour ago"
+        },
+        {
+          "name": "Big Market",
+          "location": "Buyuk Bozor",
+          "distance": "1.2 km",
+          "rating": "4.8",
+          "time": "1 hour ago"
+        },
+        {
+          "name": "Avto Salon",
+          "location": "Mirabad",
+          "distance": "1.8 km",
+          "rating": "4.6",
+          "time": "2 hours ago"
+        }
+      ],
+      "navBar": {
+        "main": "Home",
+        "catalog": "Catalog",
+        "chat": "Chat",
+        "profile": "Profile"
+      }
+    },
+    "statsBar": {
+      "partners": {
+        "value": "400+",
+        "label": "partner businesses"
+      },
+      "members": {
+        "value": "50K+",
+        "label": "active members"
+      },
+      "growth": {
+        "value": "+27%",
+        "label": "customer flow growth"
+      },
+      "connectionTime": {
+        "value": "24 hours",
+        "label": "connection time"
+      }
+    },
+    "howItWorks": {
+      "title": "How it works?",
+      "subtitle": "3 simple steps — fast and transparent process",
+      "steps": [
+        {
+          "number": "1",
+          "title": "You submit an application",
+          "description": "Fill out the form — it only takes 2 minutes. Our operators will contact you within 24 hours."
+        },
+        {
+          "number": "2",
+          "title": "Discount and QR are set up",
+          "description": "We agree on the discount percentage together, install the QR code at your checkout, and train your staff."
+        },
+        {
+          "number": "3",
+          "title": "Customers start arriving",
+          "description": "Savin members will see you in the app. Track results in real time in your Business Panel."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Why Savin?",
+      "subtitle": "A partnership that delivers direct results for your business",
+      "items": [
+        {
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path fill='currentColor' d='M16 17v2H2v-2s0-4 7-4s7 4 7 4m-3.5-9.5A3.5 3.5 0 1 0 9 11a3.5 3.5 0 0 0 3.5-3.5m3.44 5.5A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4M15 4a3.4 3.4 0 0 0-1.93.59a5 5 0 0 1 0 5.82A3.4 3.4 0 0 0 15 11a3.5 3.5 0 0 0 0-7'/></svg>",
+          "title": "New customer flow",
+          "description": "50,000+ active members choose new places through Savin — now they'll see you too."
+        },
+        {
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 64 64'> <path d='M0 0h64v64H0z' fill='none' /><path fill='currentColor' d='M54.014 32.004c-.035 5.582-.273 11.222.164 16.798c2.234-5.416 2.826-11.154 2.895-16.783c-.102-5.642-.662-11.371-2.895-16.802c-.401 5.577-.199 11.206-.164 16.787M62 32.02c-.131-8.449-.871-16.953-3.578-25.197c.045 8.553.551 17.099.514 25.654c-.035 8.242-.494 16.482-.514 24.72C61.139 48.963 61.869 40.463 62 32.02m-11.792-4.875l-.138-.03C49.552 13.98 46.978 4 43.883 4c-.596 0-1.171.377-1.718 1.067c-1.188 1.322-16.44 18.026-29.503 19.641c-1.529.189-2.99.346-4.346.459c-1.578.133-3.014.207-4.252.207c0 0-2.064 3.212-2.064 6.648c0 3.441 2.068 6.648 2.068 6.648c1.238 0 2.676.074 4.254.205c.575.049 1.177.109 1.787.172v13.402h8.082l7.938-7.416c8.864 5.846 16.087 13.992 16.087 13.992v-.027c.531.648 1.09 1.002 1.667 1.002c3.095 0 5.669-9.98 6.188-23.115l.138-.029c.843 0 1.528-2.176 1.528-4.855c-.001-2.682-.686-4.856-1.529-4.856M43.883 6.098c1.429 1.257 3.646 8.565 4.171 20.574l-8.242-1.809c.656-10.926 2.715-17.574 4.071-18.765M14.15 34.566c-.912 0-1.654-.883-1.654-1.968c0-1.088.742-1.97 1.654-1.97c.914 0 1.652.882 1.652 1.97c.001 1.086-.738 1.968-1.652 1.968m4.041 10.33v-4.092c.989.387 1.979.832 2.961 1.326zm0-6.222V28.241h-4.664c.17-.617.362-1.201.561-1.729c9.87-1.811 20.355-10.882 25.833-16.244c-1.417 5.133-2.323 12.959-2.323 21.732c0 8.798.911 16.644 2.337 21.777c-4.709-4.609-13.163-11.994-21.744-15.103m25.692 19.228c-1.355-1.191-3.415-7.84-4.071-18.766l8.242-1.809c-.525 12.009-2.742 19.318-4.171 20.575' /></svg>",
+          "title": "Zero-cost marketing",
+          "description": "No advertising budget needed: your discount is your most powerful ad. You only give a discount to customers who actually show up."
+        },
+        {
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none' /><path fill='currentColor' d='M17 20q-.425 0-.712-.288T16 19v-5q0-.425.288-.712T17 13h2q.425 0 .713.288T20 14v5q0 .425-.288.713T19 20zm-6 0q-.425 0-.712-.288T10 19V5q0-.425.288-.712T11 4h2q.425 0 .713.288T14 5v14q0 .425-.288.713T13 20zm-6 0q-.425 0-.712-.288T4 19v-9q0-.425.288-.712T5 9h2q.425 0 .713.288T8 10v9q0 .425-.288.713T7 20z' /></svg>",
+          "title": "Business Panel statistics",
+          "description": "Visits, average check, returning customers — all in real time, in your own dashboard."
+        },
+        {
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 15 15'><path d='M0 0h15v15H0z' fill='none' /><path fill='currentColor' d='M12.64 4H11V2.36c0-.2-.16-.36-.36-.36h-.28c-.2 0-.36.16-.36.36V4H8.36c-.2 0-.36.16-.36.36V10H4.36c-.2 0-.36.16-.36.36v2.28c0 .2.16.36.36.36h8.28c.2 0 .36-.16.36-.36V4.36c0-.2-.16-.36-.36-.36M6 12H5v-1h1zm2 0H7v-1h1zm2 0H9v-1h1zm0-2H9V9h1zm0-2H9V7h1zm0-2H9V5h1zm2 6h-1v-1h1zm0-2h-1V9h1zm0-2h-1V7h1zm0-2h-1V5h1zM7 2.36c0-.2-.16-.36-.36-.36H4.36c-.2 0-.36.16-.36.36V4H2.36c-.2 0-.36.16-.36.36v8.29c0 .19.16.35.35.35H3V9h4zM4 8H3V7h1zm0-2H3V5h1zm2 2H5V7h1zm0-2H5V5h1zm0-2H5V3h1z' /</svg>",
+          "title": "Branch management",
+          "description": "Manage all branches and cashiers from one dashboard — each with its own QR code."
+        }
+      ]
+    },
+    "categories": {
+      "title": "Who is it for?",
+      "list": [
+        {
+          "icon": "",
+          "name": "Restaurant"
+        },
+        {
+          "icon": "",
+          "name": "Cafe"
+        },
+        {
+          "icon": "",
+          "name": "Barber"
+        },
+        {
+          "icon": "",
+          "name": "Salon"
+        },
+        {
+          "icon": "",
+          "name": "Fitness"
+        },
+        {
+          "icon": "",
+          "name": "Supermarket"
+        },
+        {
+          "icon": "",
+          "name": "Medicine"
+        },
+        {
+          "icon": "",
+          "name": "Education"
+        },
+        {
+          "icon": "",
+          "name": "Taxi"
+        },
+        {
+          "icon": "",
+          "name": "Travel"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How much does it cost to join?",
+          "answer": "Joining and using the Business Panel is completely free. You only set the discount percentage given to customers."
+        },
+        {
+          "question": "Who sets the discount percentage?",
+          "answer": "You do. Based on our experience, we recommend the most effective percentage for your category (usually 10–30%)."
+        },
+        {
+          "question": "How does the QR code work?",
+          "answer": "The customer shows their personal QR code in the app to the cashier. The cashier scans it and applies the discount — the process takes 5 seconds."
+        },
+        {
+          "question": "How do I track results?",
+          "answer": "The Business Panel shows real-time statistics on visit count, average check, and returning customers."
+        }
+      ]
+    },
+    "applyForm": {
+      "title1": "Submit an application",
+      "subtitle": "Fill out the form — our operators will contact you within 24 hours to agree on partnership terms.",
+      "title2": "Your application has been received!",
+      "status": "Pending",
+      "num": "Application number: ",
+      "contact": "Questions? Contact: @savin_biznes",
+      "contacts": {
+        "phone": "+998 71 200 00 00",
+        "telegram": "@savin_biznes",
+        "email": "biznes@savin.uz"
+      },
+      "steps": {
+        "step1": "Business",
+        "step2": "Contact",
+        "step3": "Location",
+        "step4": "Discount"
+      },
+      "requiredNote": "* Fields marked with an asterisk are required",
+      "step1Fields": {
+        "businessName": "Business name *",
+        "category": "Category *",
+        "categoryPlaceholder": "Select",
+        "categoryOptions": ["Restaurant", "Cafe", "Salon", "Store"],
+        "businessType": "Business type *",
+        "businessTypePlaceholder": "Select",
+        "businessTypeOptions": ["Sole Proprietor", "LLC"],
+        "responsiblePerson": "Full name of responsible person *",
+        "aboutBusiness": "Brief description of business"
+      },
+      "stepIndicator1": "Step 1/4",
+      "nextButton": "Next",
+      "done": "Submit application",
+      "step": "step",
+      "back": "Back",
+      "brandName": "savin",
+      "step2Fields": {
+        "phone": "Phone number *",
+        "email": "Email address",
+        "instagram": "Instagram",
+        "telegramChannel": "Telegram channel",
+        "website": "Website"
+      },
+      "step3Fields": {
+        "region": "Region *",
+        "regionDefault": "Tashkent city",
+        "cityDistrict": "City / District *",
+        "cityDistrictDefault": "Chilonzor district",
+        "fullAddress": "Full address *",
+        "fullAddressPlaceholder": "Street, building, landmark...",
+        "workingDays": "Working days",
+        "workingDaysDefault": "Monday - Friday",
+        "workingHours": "Working hours",
+        "workingHoursDefault": "09:00 - 18:00",
+        "locationNote": "The exact location will be set together with the operator"
+      },
+      "step4Fields": {
+        "discountPercent": "Discount percentage *",
+        "discountOptions": ["5%", "10%", "15%", "20%", "25%+"],
+        "discountRecommendation": "Recommendation: 10-20% is on average most effective for your category",
+        "customDiscount": "or enter your own percentage",
+        "minPurchaseAmount": "Min. purchase amount (UZS)",
+        "minPurchaseDefault": "50000",
+        "additionalType": "Additional type",
+        "additionalTypeDefault": "All products",
+        "panelLogin": "Business panel login *",
+        "panelLoginHint": "For example: mybusiness@savin.uz — you will use it to sign in to the business panel",
+        "panelLoginChecking": "Checking...",
+        "panelLoginAvailable": "This login is available",
+        "panelLoginTaken": "This login is already taken",
+        "panelPassword": "Business panel password *",
+        "panelPasswordHint": "At least 6 characters (letters or digits)"
+      },
+      "submitNote": "Once submitted, your application will reach an operator — we'll contact you within 24 hours regarding the contract and QR setup"
+    },
+    "footer": {
+      "copyright": "© 2026 Savin. All rights reserved.",
+      "offer": "Offer",
+      "privacyPolicy": "Privacy Policy",
+      "telegram": "@savin_biznes"
+    }
+  },
+  "uz": {
+    "nav": {
+      "howItWorks": "Qanday ishlaydi",
+      "benefits": "Afzalliklar",
+      "faq": "Ko'p so'raladigan savollar",
+      "applyButton": "Ariza qoldirish"
+    },
+    "hero": {
+      "badge": "Bizneslar uchun",
+      "title": "Do'koningizga yangi mijozlar oqimini ulang",
+      "description": "Savin a'zolari — chegirma qidirayotgan minglab faol xaridorlar. Ariza qoldiring, 24 soat ichida hamkorlikni boshlaymiz.",
+      "applyButton": "Ariza qoldirish",
+      "howItWorksButton": "Qanday ishlaydi",
+      "stats": {
+        "partners": "400+ hamkor",
+        "members": "50 000+ faol a'zo",
+        "free": "Ulanish bepul"
+      }
+    },
+    "phoneMock": {
+      "time": "9:41",
+      "category": "Savin",
+      "filterNearby": "Yaqin atrof",
+      "filterTopRated": "Yuqori reyting",
+      "resultsCount": "24 ta biznes topildi",
+      "businesses": [
+        {
+          "name": "Fast Food",
+          "location": "Chilonzor",
+          "distance": "0.4 km",
+          "rating": "4.9",
+          "time": "1 soat avval"
+        },
+        {
+          "name": "Big Market",
+          "location": "Buyuk bozor",
+          "distance": "1.2 km",
+          "rating": "4.8",
+          "time": "1 soat avval"
+        },
+        {
+          "name": "Avto Salon",
+          "location": "Mirabad",
+          "distance": "1.8 km",
+          "rating": "4.6",
+          "time": "2 soat avval"
+        }
+      ],
+      "navBar": {
+        "main": "Asosiy",
+        "catalog": "Katalog",
+        "chat": "Chat",
+        "profile": "Profil"
+      }
+    },
+    "statsBar": {
+      "partners": {
+        "value": "400+",
+        "label": "hamkor biznes"
+      },
+      "members": {
+        "value": "50K+",
+        "label": "faol a'zo"
+      },
+      "growth": {
+        "value": "+27%",
+        "label": "mijozlar oqimi o'sishi"
+      },
+      "connectionTime": {
+        "value": "24 soat",
+        "label": "ulanish vaqti"
+      }
+    },
+    "howItWorks": {
+      "title": "Qanday ishlaydi?",
+      "subtitle": "3 oddiy qadam — ishingiz tez va shaffof ishlaydi",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Ariza qoldirasiz",
+          "description": "Formani to'ldiring — atigi 2 daqiqa vaqt oladi. Operatorlarimiz 24 soat ichida siz bilan bog'lanadi."
+        },
+        {
+          "number": "2",
+          "title": "Chegirma va QR ulanadi",
+          "description": "Chegirma foizini birga belgilaymiz, kassaga QR-kod o'rnatamiz va xodimlaringizni o'rgatamiz."
+        },
+        {
+          "number": "3",
+          "title": "Mijozlar kela boshlaydi",
+          "description": "Savin a'zolari sizni ilovada ko'radi. Natijani Biznes panelda real vaqtda kuzatib borasiz."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Nega Savin?",
+      "subtitle": "Biznesingiz uchun to'g'ridan-to'g'ri natija beradigan hamkorlik",
+      "items": [
+        {
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path fill='currentColor' d='M16 17v2H2v-2s0-4 7-4s7 4 7 4m-3.5-9.5A3.5 3.5 0 1 0 9 11a3.5 3.5 0 0 0 3.5-3.5m3.44 5.5A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4M15 4a3.4 3.4 0 0 0-1.93.59a5 5 0 0 1 0 5.82A3.4 3.4 0 0 0 15 11a3.5 3.5 0 0 0 0-7'/></svg>",
+          "title": "Yangi mijozlar oqimi",
+          "description": "50 000+ faol a'zo yangi joylarni aynan Savin orqali tanlaydi — endi ular sizni ham ko'radi."
+        },
+        {
+          "icon": "📣",
+          "title": "0 so'mlik marketing",
+          "description": "Reklama byudjeti shart emas: chegirmangiz — eng kuchli reklamangiz. Faqat kelgan mijozga chegirma berasiz."
+        },
+        {
+          "icon": "📊",
+          "title": "Biznes panel statistikasi",
+          "description": "Tashriflar, o'rtacha chek, qaytgan mijozlar — barchasi real vaqtda, alohida kabinetingizda."
+        },
+        {
+          "icon": "🏢",
+          "title": "Filiallar boshqaruvi",
+          "description": "Bir kabinetdan barcha filial va kassirlarni boshqaring — har biriga alohida QR-kod."
+        }
+      ]
+    },
+    "categories": {
+      "title": "Kimlar uchun?",
+      "list": [
+        {
+          "icon": "🍽️",
+          "name": "Restoran"
+        },
+        {
+          "icon": "☕",
+          "name": "Kafe"
+        },
+        {
+          "icon": "💈",
+          "name": "Barber"
+        },
+        {
+          "icon": "💇",
+          "name": "Salon"
+        },
+        {
+          "icon": "🏋️",
+          "name": "Fitness"
+        },
+        {
+          "icon": "🛒",
+          "name": "Supermarket"
+        },
+        {
+          "icon": "⚕️",
+          "name": "Tibbiyot"
+        },
+        {
+          "icon": "🎓",
+          "name": "Ta'lim"
+        },
+        {
+          "icon": "🚕",
+          "name": "Taxi"
+        },
+        {
+          "icon": "✈️",
+          "name": "Sayohat"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Ko'p so'raladigan savollar",
+      "items": [
+        {
+          "question": "Ulanish qancha turadi?",
+          "answer": "Ulanish va Biznes panelidan foydalanish mutlaqo bepul. Siz faqat mijozga beriladigan chegirma foizini belgilaysiz."
+        },
+        {
+          "question": "Chegirma foizini kim belgilaydi?",
+          "answer": "Siz o'zingiz. Tajribamizdan kelib chiqib, kategoriyangiz uchun eng samarali foizni tavsiya qilamiz (odatda 10–30%)."
+        },
+        {
+          "question": "QR-kod qanday ishlaydi?",
+          "answer": "Mijoz ilovadagi shaxsiy QR-kodini kassirga ko'rsatadi. Kassir skaner qilib chegirmani qo'llaydi — jarayon 5 soniya."
+        },
+        {
+          "question": "Natijani qanday kuzataman?",
+          "answer": "Biznes panelda tashriflar soni, o'rtacha chek va qaytgan mijozlar statistikasi real vaqtda ko'rinadi."
+        }
+      ]
+    },
+    "applyForm": {
+      "title1": "Ariza qoldiring",
+      "subtitle": "Formani to'ldiring — operatorlarimiz 24 soat ichida bog'lanadi va hamkorlik shartlarini kelishib olamiz.",
+      "title2": "Arizangiz qabul qilindi!",
+      "status": "Kutilmoqda",
+      "num": "Ariza raqami: ",
+      "contact": "Savollar bo'lsa: @savin_biznes",
+      "contacts": {
+        "phone": "+998 71 200 00 00",
+        "telegram": "@savin_biznes",
+        "email": "biznes@savin.uz"
+      },
+      "steps": {
+        "step1": "Biznes",
+        "step2": "Kontakt",
+        "step3": "Joylashuv",
+        "step4": "Chegirma"
+      },
+      "requiredNote": "* bilan belgilangan maydonlar majburiy",
+      "step1Fields": {
+        "businessName": "Biznes nomi *",
+        "category": "Kategoriya *",
+        "categoryPlaceholder": "Tanlang",
+        "categoryOptions": ["Restoran", "Kafe", "Salon", "Do'kon"],
+        "businessType": "Biznes turi *",
+        "businessTypePlaceholder": "Tanlang",
+        "businessTypeOptions": ["YaTT", "MChJ"],
+        "responsiblePerson": "Mas'ul shaxs FIO *",
+        "aboutBusiness": "Biznes haqida qisqacha"
+      },
+      "stepIndicator1": "1/4 qadam",
+      "nextButton": "Keyingi",
+      "done": "Ariza yuborish",
+      "step": "qadam",
+      "back": "ortga",
+      "brandName": "savin",
+      "step2Fields": {
+        "phone": "Telefon raqami *",
+        "email": "Email manzili",
+        "instagram": "Instagram",
+        "telegramChannel": "Telegram kanali",
+        "website": "Veb-sayt"
+      },
+      "step3Fields": {
+        "region": "Viloyat *",
+        "regionDefault": "Toshkent shahri",
+        "cityDistrict": "Shahar / Tuman *",
+        "cityDistrictDefault": "Chilonzor tumani",
+        "fullAddress": "To'liq manzil *",
+        "fullAddressPlaceholder": "Ko'cha, uy, mo'ljal...",
+        "workingDays": "Ish kunlari",
+        "workingDaysDefault": "Dushanba - Juma",
+        "workingHours": "Ish vaqti",
+        "workingHoursDefault": "09:00 - 18:00",
+        "locationNote": "Aniq lokatsiyani operator siz bilan birga belgilaydi"
+      },
+      "step4Fields": {
+        "discountPercent": "Chegirma foizi *",
+        "discountOptions": ["5%", "10%", "15%", "20%", "25%+"],
+        "discountRecommendation": "Tavsiya: kategoriyangizda o'rtacha 10-20% eng samarali",
+        "customDiscount": "yoki o'z foizingizni kiriting",
+        "minPurchaseAmount": "Min. xarid summasi (so'm)",
+        "minPurchaseDefault": "50000",
+        "additionalType": "Qo'shimcha turi",
+        "additionalTypeDefault": "Barcha mahsulotlar",
+        "panelLogin": "Biznes panel logini *",
+        "panelLoginHint": "Masalan: biznesim@savin.uz — biznes panelga shu login bilan kirasiz",
+        "panelLoginChecking": "Tekshirilmoqda...",
+        "panelLoginAvailable": "Bu login bo'sh",
+        "panelLoginTaken": "Bu login band",
+        "panelPassword": "Biznes panel paroli *",
+        "panelPasswordHint": "Kamida 6 ta belgi (harf yoki raqam)"
+      },
+      "submitNote": "Yuborilgach arizangiz operatorga tushadi — 24 soat ichida shartnoma va QR o'rnatish bo'yicha bog'lanamiz"
+    },
+    "footer": {
+      "copyright": "© 2026 Savin. Barcha huquqlar himoyalangan.",
+      "offer": "Oferta",
+      "privacyPolicy": "Maxfiylik siyosati",
+      "telegram": "@savin_biznes"
+    }
+  },
+
+  "ru": {
+    "nav": {
+      "howItWorks": "Как это работает",
+      "benefits": "Преимущества",
+      "faq": "Частые вопросы",
+      "applyButton": "Оставить заявку"
+    },
+    "hero": {
+      "badge": "Для бизнеса",
+      "title": "Подключите к своему магазину поток новых клиентов",
+      "description": "Участники Savin — тысячи активных покупателей, ищущих скидки. Оставьте заявку, и мы начнём сотрудничество в течение 24 часов.",
+      "applyButton": "Оставить заявку",
+      "howItWorksButton": "Как это работает",
+      "stats": {
+        "partners": "400+ партнёров",
+        "members": "50 000+ активных участников",
+        "free": "Подключение бесплатно"
+      }
+    },
+    "phoneMock": {
+      "time": "9:41",
+      "category": "Savin",
+      "filterNearby": "Рядом",
+      "filterTopRated": "Высокий рейтинг",
+      "resultsCount": "Найдено 24 заведения",
+      "businesses": [
+        {
+          "name": "Fast Food",
+          "location": "Чиланзар",
+          "distance": "0.4 км",
+          "rating": "4.9",
+          "time": "1 час назад"
+        },
+        {
+          "name": "Big Market",
+          "location": "Большой базар",
+          "distance": "1.2 км",
+          "rating": "4.8",
+          "time": "1 час назад"
+        },
+        {
+          "name": "Avto Salon",
+          "location": "Мирабад",
+          "distance": "1.8 км",
+          "rating": "4.6",
+          "time": "2 часа назад"
+        }
+      ],
+      "navBar": {
+        "main": "Главная",
+        "catalog": "Каталог",
+        "chat": "Чат",
+        "profile": "Профиль"
+      }
+    },
+    "statsBar": {
+      "partners": {
+        "value": "400+",
+        "label": "бизнес-партнёров"
+      },
+      "members": {
+        "value": "50K+",
+        "label": "активных участников"
+      },
+      "growth": {
+        "value": "+27%",
+        "label": "рост потока клиентов"
+      },
+      "connectionTime": {
+        "value": "24 часа",
+        "label": "время подключения"
+      }
+    },
+    "howItWorks": {
+      "title": "Как это работает?",
+      "subtitle": "3 простых шага — работаем быстро и прозрачно",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Вы оставляете заявку",
+          "description": "Заполните форму — это займёт всего 2 минуты. Наши операторы свяжутся с вами в течение 24 часов."
+        },
+        {
+          "number": "2",
+          "title": "Подключаем скидку и QR",
+          "description": "Вместе определяем процент скидки, устанавливаем QR-код на кассе и обучаем ваших сотрудников."
+        },
+        {
+          "number": "3",
+          "title": "Начинают приходить клиенты",
+          "description": "Участники Savin видят вас в приложении. Результаты отслеживаете в режиме реального времени в Бизнес-панели."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Почему Savin?",
+      "subtitle": "Сотрудничество, которое приносит прямую пользу вашему бизнесу",
+      "items": [
+        {
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path fill='currentColor' d='M16 17v2H2v-2s0-4 7-4s7 4 7 4m-3.5-9.5A3.5 3.5 0 1 0 9 11a3.5 3.5 0 0 0 3.5-3.5m3.44 5.5A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4M15 4a3.4 3.4 0 0 0-1.93.59a5 5 0 0 1 0 5.82A3.4 3.4 0 0 0 15 11a3.5 3.5 0 0 0 0-7'/></svg>",
+          "title": "Поток новых клиентов",
+          "description": "50 000+ активных участников выбирают новые места именно через Savin — теперь они увидят и вас."
+        },
+        {
+          "icon": "📣",
+          "title": "Маркетинг за 0 сумов",
+          "description": "Рекламный бюджет не нужен: ваша скидка — это и есть ваша самая мощная реклама. Вы даёте скидку только пришедшему клиенту."
+        },
+        {
+          "icon": "📊",
+          "title": "Статистика в Бизнес-панели",
+          "description": "Посещения, средний чек, вернувшиеся клиенты — всё в реальном времени, в вашем личном кабинете."
+        },
+        {
+          "icon": "🏢",
+          "title": "Управление филиалами",
+          "description": "Управляйте всеми филиалами и кассирами из одного кабинета — для каждого свой QR-код."
+        }
+      ]
+    },
+    "categories": {
+      "title": "Для кого?",
+      "list": [
+        {
+          "icon": "🍽️",
+          "name": "Ресторан"
+        },
+        {
+          "icon": "☕",
+          "name": "Кафе"
+        },
+        {
+          "icon": "💈",
+          "name": "Барбершоп"
+        },
+        {
+          "icon": "💇",
+          "name": "Салон"
+        },
+        {
+          "icon": "🏋️",
+          "name": "Фитнес"
+        },
+        {
+          "icon": "🛒",
+          "name": "Супермаркет"
+        },
+        {
+          "icon": "⚕️",
+          "name": "Медицина"
+        },
+        {
+          "icon": "🎓",
+          "name": "Образование"
+        },
+        {
+          "icon": "🚕",
+          "name": "Такси"
+        },
+        {
+          "icon": "✈️",
+          "name": "Путешествия"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Частые вопросы",
+      "items": [
+        {
+          "question": "Сколько стоит подключение?",
+          "answer": "Подключение и использование Бизнес-панели совершенно бесплатны. Вы только устанавливаете процент скидки, предоставляемой клиенту."
+        },
+        {
+          "question": "Кто устанавливает процент скидки?",
+          "answer": "Вы сами. Исходя из нашего опыта, мы рекомендуем наиболее эффективный процент для вашей категории (обычно 10–30%)."
+        },
+        {
+          "question": "Как работает QR-код?",
+          "answer": "Клиент показывает кассиру свой персональный QR-код в приложении. Кассир сканирует его и применяет скидку — процесс занимает 5 секунд."
+        },
+        {
+          "question": "Как отслеживать результаты?",
+          "answer": "В Бизнес-панели в реальном времени отображается статистика по количеству посещений, среднему чеку и вернувшимся клиентам."
+        }
+      ]
+    },
+    "applyForm": {
+      "title1": "Оставьте заявку",
+      "subtitle": "Заполните форму — наши операторы свяжутся с вами в течение 24 часов и согласуют условия сотрудничества.",
+      "title2": "Ваша заявка принята!",
+      "status": "В ожидании",
+      "num": "Номер заявки: ",
+      "contact": "По вопросам обращайтесь: ",
+      "contacts": {
+        "phone": "+998 71 200 00 00",
+        "telegram": "@savin_biznes",
+        "email": "biznes@savin.uz"
+      },
+      "steps": {
+        "step1": "Бизнес",
+        "step2": "Контакты",
+        "step3": "Локация",
+        "step4": "Скидка"
+      },
+      "requiredNote": "* поля, отмеченные звёздочкой, обязательны",
+      "step1Fields": {
+        "businessName": "Название бизнеса *",
+        "category": "Категория *",
+        "categoryPlaceholder": "Выберите",
+        "categoryOptions": ["Ресторан", "Кафе", "Салон", "Магазин"],
+        "businessType": "Тип бизнеса *",
+        "businessTypePlaceholder": "Выберите",
+        "businessTypeOptions": ["ИП", "ООО"],
+        "responsiblePerson": "ФИО ответственного лица *",
+        "aboutBusiness": "Краткая информация о бизнесе"
+      },
+      "stepIndicator1": "Шаг 1/4",
+      "nextButton": "Далее",
+      "done": "Подача заявки",
+      "step": "шаг",
+      "back": "Назад",
+      "brandName": "savin",
+      "step2Fields": {
+        "phone": "Номер телефона *",
+        "email": "Адрес электронной почты",
+        "instagram": "Instagram",
+        "telegramChannel": "Telegram-канал",
+        "website": "Веб-сайт"
+      },
+      "step3Fields": {
+        "region": "Область *",
+        "regionDefault": "город Ташкент",
+        "cityDistrict": "Город / Район *",
+        "cityDistrictDefault": "Чиланзарский район",
+        "fullAddress": "Полный адрес *",
+        "fullAddressPlaceholder": "Улица, дом, ориентир...",
+        "workingDays": "Рабочие дни",
+        "workingDaysDefault": "Понедельник - Пятница",
+        "workingHours": "Рабочее время",
+        "workingHoursDefault": "09:00 - 18:00",
+        "locationNote": "Точную локацию оператор определит вместе с вами"
+      },
+      "step4Fields": {
+        "discountPercent": "Процент скидки *",
+        "discountOptions": ["5%", "10%", "15%", "20%", "25%+"],
+        "discountRecommendation": "Рекомендация: в вашей категории в среднем наиболее эффективны 10-20%",
+        "customDiscount": "или введите свой процент",
+        "minPurchaseAmount": "Мин. сумма покупки (сум)",
+        "minPurchaseDefault": "50000",
+        "additionalType": "Дополнительный тип",
+        "additionalTypeDefault": "Все товары",
+        "panelLogin": "Логин бизнес-панели *",
+        "panelLoginHint": "Например: mybusiness@savin.uz — вы будете входить в бизнес-панель с этим логином",
+        "panelLoginChecking": "Проверка...",
+        "panelLoginAvailable": "Этот логин свободен",
+        "panelLoginTaken": "Этот логин уже занят",
+        "panelPassword": "Пароль бизнес-панели *",
+        "panelPasswordHint": "Не менее 6 символов (буквы или цифры)"
+      },
+      "submitNote": "После отправки ваша заявка попадёт к оператору — в течение 24 часов свяжемся с вами по договору и установке QR"
+    },
+    "footer": {
+      "copyright": "© 2026 Savin. Все права защищены.",
+      "offer": "Оферта",
+      "privacyPolicy": "Политика конфиденциальности",
+      "telegram": "@savin_biznes"
+    }
+  }
+}

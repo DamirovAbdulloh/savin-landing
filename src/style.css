@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+/* ============================================================
+   Skrollbarlarni korinmas qilish — scroll funksiyasi ishlayveradi
+   (foydalanuvchi talabi: barcha korinib turgan skrollbarlar yashirilsin)
+   ============================================================ */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* eski Edge/IE */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/yangi Edge */
+  width: 0;
+  height: 0;
+}
+
