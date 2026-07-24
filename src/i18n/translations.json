@@ -123,43 +123,43 @@
       "title": "Who is it for?",
       "list": [
         {
-          "icon": "",
+          "icon": "🍽️",
           "name": "Restaurant"
         },
         {
-          "icon": "",
+          "icon": "☕",
           "name": "Cafe"
         },
         {
-          "icon": "",
+          "icon": "💈",
           "name": "Barber"
         },
         {
-          "icon": "",
+          "icon": "💇",
           "name": "Salon"
         },
         {
-          "icon": "",
+          "icon": "🏋️",
           "name": "Fitness"
         },
         {
-          "icon": "",
+          "icon": "🛒",
           "name": "Supermarket"
         },
         {
-          "icon": "",
+          "icon": "⚕️",
           "name": "Medicine"
         },
         {
-          "icon": "",
+          "icon": "🎓",
           "name": "Education"
         },
         {
-          "icon": "",
+          "icon": "🚕",
           "name": "Taxi"
         },
         {
-          "icon": "",
+          "icon": "✈️",
           "name": "Travel"
         }
       ]
@@ -208,10 +208,18 @@
         "businessName": "Business name *",
         "category": "Category *",
         "categoryPlaceholder": "Select",
-        "categoryOptions": ["Restaurant", "Cafe", "Salon", "Store"],
+        "categoryOptions": [
+          "Restaurant",
+          "Cafe",
+          "Salon",
+          "Store"
+        ],
         "businessType": "Business type *",
         "businessTypePlaceholder": "Select",
-        "businessTypeOptions": ["Sole Proprietor", "LLC"],
+        "businessTypeOptions": [
+          "Sole Proprietor",
+          "LLC"
+        ],
         "responsiblePerson": "Full name of responsible person *",
         "aboutBusiness": "Brief description of business"
       },
@@ -243,7 +251,13 @@
       },
       "step4Fields": {
         "discountPercent": "Discount percentage *",
-        "discountOptions": ["5%", "10%", "15%", "20%", "25%+"],
+        "discountOptions": [
+          "5%",
+          "10%",
+          "15%",
+          "20%",
+          "25%+"
+        ],
         "discountRecommendation": "Recommendation: 10-20% is on average most effective for your category",
         "customDiscount": "or enter your own percentage",
         "minPurchaseAmount": "Min. purchase amount (UZS)",
@@ -371,17 +385,17 @@
           "description": "50 000+ faol a'zo yangi joylarni aynan Savin orqali tanlaydi — endi ular sizni ham ko'radi."
         },
         {
-          "icon": "📣",
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 64 64'> <path d='M0 0h64v64H0z' fill='none' /><path fill='currentColor' d='M54.014 32.004c-.035 5.582-.273 11.222.164 16.798c2.234-5.416 2.826-11.154 2.895-16.783c-.102-5.642-.662-11.371-2.895-16.802c-.401 5.577-.199 11.206-.164 16.787M62 32.02c-.131-8.449-.871-16.953-3.578-25.197c.045 8.553.551 17.099.514 25.654c-.035 8.242-.494 16.482-.514 24.72C61.139 48.963 61.869 40.463 62 32.02m-11.792-4.875l-.138-.03C49.552 13.98 46.978 4 43.883 4c-.596 0-1.171.377-1.718 1.067c-1.188 1.322-16.44 18.026-29.503 19.641c-1.529.189-2.99.346-4.346.459c-1.578.133-3.014.207-4.252.207c0 0-2.064 3.212-2.064 6.648c0 3.441 2.068 6.648 2.068 6.648c1.238 0 2.676.074 4.254.205c.575.049 1.177.109 1.787.172v13.402h8.082l7.938-7.416c8.864 5.846 16.087 13.992 16.087 13.992v-.027c.531.648 1.09 1.002 1.667 1.002c3.095 0 5.669-9.98 6.188-23.115l.138-.029c.843 0 1.528-2.176 1.528-4.855c-.001-2.682-.686-4.856-1.529-4.856M43.883 6.098c1.429 1.257 3.646 8.565 4.171 20.574l-8.242-1.809c.656-10.926 2.715-17.574 4.071-18.765M14.15 34.566c-.912 0-1.654-.883-1.654-1.968c0-1.088.742-1.97 1.654-1.97c.914 0 1.652.882 1.652 1.97c.001 1.086-.738 1.968-1.652 1.968m4.041 10.33v-4.092c.989.387 1.979.832 2.961 1.326zm0-6.222V28.241h-4.664c.17-.617.362-1.201.561-1.729c9.87-1.811 20.355-10.882 25.833-16.244c-1.417 5.133-2.323 12.959-2.323 21.732c0 8.798.911 16.644 2.337 21.777c-4.709-4.609-13.163-11.994-21.744-15.103m25.692 19.228c-1.355-1.191-3.415-7.84-4.071-18.766l8.242-1.809c-.525 12.009-2.742 19.318-4.171 20.575' /></svg>",
           "title": "0 so'mlik marketing",
           "description": "Reklama byudjeti shart emas: chegirmangiz — eng kuchli reklamangiz. Faqat kelgan mijozga chegirma berasiz."
         },
         {
-          "icon": "📊",
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none' /><path fill='currentColor' d='M17 20q-.425 0-.712-.288T16 19v-5q0-.425.288-.712T17 13h2q.425 0 .713.288T20 14v5q0 .425-.288.713T19 20zm-6 0q-.425 0-.712-.288T10 19V5q0-.425.288-.712T11 4h2q.425 0 .713.288T14 5v14q0 .425-.288.713T13 20zm-6 0q-.425 0-.712-.288T4 19v-9q0-.425.288-.712T5 9h2q.425 0 .713.288T8 10v9q0 .425-.288.713T7 20z' /></svg>",
           "title": "Biznes panel statistikasi",
           "description": "Tashriflar, o'rtacha chek, qaytgan mijozlar — barchasi real vaqtda, alohida kabinetingizda."
         },
         {
-          "icon": "🏢",
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 15 15'><path d='M0 0h15v15H0z' fill='none' /><path fill='currentColor' d='M12.64 4H11V2.36c0-.2-.16-.36-.36-.36h-.28c-.2 0-.36.16-.36.36V4H8.36c-.2 0-.36.16-.36.36V10H4.36c-.2 0-.36.16-.36.36v2.28c0 .2.16.36.36.36h8.28c.2 0 .36-.16.36-.36V4.36c0-.2-.16-.36-.36-.36M6 12H5v-1h1zm2 0H7v-1h1zm2 0H9v-1h1zm0-2H9V9h1zm0-2H9V7h1zm0-2H9V5h1zm2 6h-1v-1h1zm0-2h-1V9h1zm0-2h-1V7h1zm0-2h-1V5h1zM7 2.36c0-.2-.16-.36-.36-.36H4.36c-.2 0-.36.16-.36.36V4H2.36c-.2 0-.36.16-.36.36v8.29c0 .19.16.35.35.35H3V9h4zM4 8H3V7h1zm0-2H3V5h1zm2 2H5V7h1zm0-2H5V5h1zm0-2H5V3h1z' /</svg>",
           "title": "Filiallar boshqaruvi",
           "description": "Bir kabinetdan barcha filial va kassirlarni boshqaring — har biriga alohida QR-kod."
         }
@@ -476,10 +490,18 @@
         "businessName": "Biznes nomi *",
         "category": "Kategoriya *",
         "categoryPlaceholder": "Tanlang",
-        "categoryOptions": ["Restoran", "Kafe", "Salon", "Do'kon"],
+        "categoryOptions": [
+          "Restoran",
+          "Kafe",
+          "Salon",
+          "Do'kon"
+        ],
         "businessType": "Biznes turi *",
         "businessTypePlaceholder": "Tanlang",
-        "businessTypeOptions": ["YaTT", "MChJ"],
+        "businessTypeOptions": [
+          "YaTT",
+          "MChJ"
+        ],
         "responsiblePerson": "Mas'ul shaxs FIO *",
         "aboutBusiness": "Biznes haqida qisqacha"
       },
@@ -511,7 +533,13 @@
       },
       "step4Fields": {
         "discountPercent": "Chegirma foizi *",
-        "discountOptions": ["5%", "10%", "15%", "20%", "25%+"],
+        "discountOptions": [
+          "5%",
+          "10%",
+          "15%",
+          "20%",
+          "25%+"
+        ],
         "discountRecommendation": "Tavsiya: kategoriyangizda o'rtacha 10-20% eng samarali",
         "customDiscount": "yoki o'z foizingizni kiriting",
         "minPurchaseAmount": "Min. xarid summasi (so'm)",
@@ -535,7 +563,6 @@
       "telegram": "@savin_biznes"
     }
   },
-
   "ru": {
     "nav": {
       "howItWorks": "Как это работает",
@@ -640,17 +667,17 @@
           "description": "50 000+ активных участников выбирают новые места именно через Savin — теперь они увидят и вас."
         },
         {
-          "icon": "📣",
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 64 64'> <path d='M0 0h64v64H0z' fill='none' /><path fill='currentColor' d='M54.014 32.004c-.035 5.582-.273 11.222.164 16.798c2.234-5.416 2.826-11.154 2.895-16.783c-.102-5.642-.662-11.371-2.895-16.802c-.401 5.577-.199 11.206-.164 16.787M62 32.02c-.131-8.449-.871-16.953-3.578-25.197c.045 8.553.551 17.099.514 25.654c-.035 8.242-.494 16.482-.514 24.72C61.139 48.963 61.869 40.463 62 32.02m-11.792-4.875l-.138-.03C49.552 13.98 46.978 4 43.883 4c-.596 0-1.171.377-1.718 1.067c-1.188 1.322-16.44 18.026-29.503 19.641c-1.529.189-2.99.346-4.346.459c-1.578.133-3.014.207-4.252.207c0 0-2.064 3.212-2.064 6.648c0 3.441 2.068 6.648 2.068 6.648c1.238 0 2.676.074 4.254.205c.575.049 1.177.109 1.787.172v13.402h8.082l7.938-7.416c8.864 5.846 16.087 13.992 16.087 13.992v-.027c.531.648 1.09 1.002 1.667 1.002c3.095 0 5.669-9.98 6.188-23.115l.138-.029c.843 0 1.528-2.176 1.528-4.855c-.001-2.682-.686-4.856-1.529-4.856M43.883 6.098c1.429 1.257 3.646 8.565 4.171 20.574l-8.242-1.809c.656-10.926 2.715-17.574 4.071-18.765M14.15 34.566c-.912 0-1.654-.883-1.654-1.968c0-1.088.742-1.97 1.654-1.97c.914 0 1.652.882 1.652 1.97c.001 1.086-.738 1.968-1.652 1.968m4.041 10.33v-4.092c.989.387 1.979.832 2.961 1.326zm0-6.222V28.241h-4.664c.17-.617.362-1.201.561-1.729c9.87-1.811 20.355-10.882 25.833-16.244c-1.417 5.133-2.323 12.959-2.323 21.732c0 8.798.911 16.644 2.337 21.777c-4.709-4.609-13.163-11.994-21.744-15.103m25.692 19.228c-1.355-1.191-3.415-7.84-4.071-18.766l8.242-1.809c-.525 12.009-2.742 19.318-4.171 20.575' /></svg>",
           "title": "Маркетинг за 0 сумов",
           "description": "Рекламный бюджет не нужен: ваша скидка — это и есть ваша самая мощная реклама. Вы даёте скидку только пришедшему клиенту."
         },
         {
-          "icon": "📊",
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none' /><path fill='currentColor' d='M17 20q-.425 0-.712-.288T16 19v-5q0-.425.288-.712T17 13h2q.425 0 .713.288T20 14v5q0 .425-.288.713T19 20zm-6 0q-.425 0-.712-.288T10 19V5q0-.425.288-.712T11 4h2q.425 0 .713.288T14 5v14q0 .425-.288.713T13 20zm-6 0q-.425 0-.712-.288T4 19v-9q0-.425.288-.712T5 9h2q.425 0 .713.288T8 10v9q0 .425-.288.713T7 20z' /></svg>",
           "title": "Статистика в Бизнес-панели",
           "description": "Посещения, средний чек, вернувшиеся клиенты — всё в реальном времени, в вашем личном кабинете."
         },
         {
-          "icon": "🏢",
+          "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 15 15'><path d='M0 0h15v15H0z' fill='none' /><path fill='currentColor' d='M12.64 4H11V2.36c0-.2-.16-.36-.36-.36h-.28c-.2 0-.36.16-.36.36V4H8.36c-.2 0-.36.16-.36.36V10H4.36c-.2 0-.36.16-.36.36v2.28c0 .2.16.36.36.36h8.28c.2 0 .36-.16.36-.36V4.36c0-.2-.16-.36-.36-.36M6 12H5v-1h1zm2 0H7v-1h1zm2 0H9v-1h1zm0-2H9V9h1zm0-2H9V7h1zm0-2H9V5h1zm2 6h-1v-1h1zm0-2h-1V9h1zm0-2h-1V7h1zm0-2h-1V5h1zM7 2.36c0-.2-.16-.36-.36-.36H4.36c-.2 0-.36.16-.36.36V4H2.36c-.2 0-.36.16-.36.36v8.29c0 .19.16.35.35.35H3V9h4zM4 8H3V7h1zm0-2H3V5h1zm2 2H5V7h1zm0-2H5V5h1zm0-2H5V3h1z' /</svg>",
           "title": "Управление филиалами",
           "description": "Управляйте всеми филиалами и кассирами из одного кабинета — для каждого свой QR-код."
         }
@@ -745,10 +772,18 @@
         "businessName": "Название бизнеса *",
         "category": "Категория *",
         "categoryPlaceholder": "Выберите",
-        "categoryOptions": ["Ресторан", "Кафе", "Салон", "Магазин"],
+        "categoryOptions": [
+          "Ресторан",
+          "Кафе",
+          "Салон",
+          "Магазин"
+        ],
         "businessType": "Тип бизнеса *",
         "businessTypePlaceholder": "Выберите",
-        "businessTypeOptions": ["ИП", "ООО"],
+        "businessTypeOptions": [
+          "ИП",
+          "ООО"
+        ],
         "responsiblePerson": "ФИО ответственного лица *",
         "aboutBusiness": "Краткая информация о бизнесе"
       },
@@ -780,7 +815,13 @@
       },
       "step4Fields": {
         "discountPercent": "Процент скидки *",
-        "discountOptions": ["5%", "10%", "15%", "20%", "25%+"],
+        "discountOptions": [
+          "5%",
+          "10%",
+          "15%",
+          "20%",
+          "25%+"
+        ],
         "discountRecommendation": "Рекомендация: в вашей категории в среднем наиболее эффективны 10-20%",
         "customDiscount": "или введите свой процент",
         "minPurchaseAmount": "Мин. сумма покупки (сум)",
