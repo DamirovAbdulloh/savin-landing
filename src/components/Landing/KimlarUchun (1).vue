@@ -23,7 +23,7 @@
           :class="{ 'animate-fade-in-up': isVisible }"
           :style="{ animationDelay: isVisible ? `${index * 50}ms` : '0ms' }"
         >
-          <span class="text-sm sm:text-base leading-none">{{ item.icon }}</span>
+          <span class="text-sm sm:text-base leading-none inline-flex items-center" v-html="item.icon"></span>
           <span>{{ item.name }}</span>
         </button>
       </div>
