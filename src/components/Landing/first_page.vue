@@ -433,7 +433,9 @@
               }}</a>
 
               <a
-                href="#"
+                :href="`https://t.me/${t('footer.telegram').replace('@', '')}`"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="text-sm text-lime-600 hover:text-lime-700 font-medium"
                 >{{ t("footer.telegram") }}</a
               >

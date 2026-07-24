@@ -913,7 +913,9 @@
             <p class="text-xs text-gray-400 mb-6 leading-relaxed">
               {{ t("applyForm.contact") }}
               <a
-                href="#"
+                :href="`https://t.me/${t('applyForm.contacts.telegram').replace('@', '')}`"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="text-emerald-600 font-medium hover:underline"
                 >{{ t("applyForm.contacts.telegram") }}</a
               >
