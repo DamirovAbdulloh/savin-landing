@@ -408,9 +408,11 @@
 
       <StatsBar />
 
-      <NegaSavin id="Afzalliklar" />
-
+      <!-- Tartib yuqoridagi menyu bilan bir xil: avval "Qanday ishlaydi",
+           keyin "Afzalliklar" (Nega Savin) -->
       <HowItworks id="Howitworks" />
+
+      <NegaSavin id="Afzalliklar" />
 
       <KimlarUchun />
 
