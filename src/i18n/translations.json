@@ -272,7 +272,8 @@
         "panelPassword": "Business panel password *",
         "panelPasswordHint": "At least 6 characters (letters or digits)"
       },
-      "submitNote": "Once submitted, your application will reach an operator — we'll contact you within 24 hours regarding the contract and QR setup"
+      "submitNote": "Once submitted, your application will reach an operator — we'll contact you within 24 hours regarding the contract and QR setup",
+      "smsNotice": "Once an admin approves your application, Savin will send an SMS to this number:"
     },
     "footer": {
       "copyright": "© 2026 Savin. All rights reserved.",
@@ -554,7 +555,8 @@
         "panelPassword": "Biznes panel paroli *",
         "panelPasswordHint": "Kamida 6 ta belgi (harf yoki raqam)"
       },
-      "submitNote": "Yuborilgach arizangiz operatorga tushadi — 24 soat ichida shartnoma va QR o'rnatish bo'yicha bog'lanamiz"
+      "submitNote": "Yuborilgach arizangiz operatorga tushadi — 24 soat ichida shartnoma va QR o'rnatish bo'yicha bog'lanamiz",
+      "smsNotice": "Admin arizangizni tasdiqlagach, quyidagi raqamga Savin tomonidan SMS xabar yuboriladi:"
     },
     "footer": {
       "copyright": "© 2026 Savin. Barcha huquqlar himoyalangan.",
@@ -836,7 +838,8 @@
         "panelPassword": "Пароль бизнес-панели *",
         "panelPasswordHint": "Не менее 6 символов (буквы или цифры)"
       },
-      "submitNote": "После отправки ваша заявка попадёт к оператору — в течение 24 часов свяжемся с вами по договору и установке QR"
+      "submitNote": "После отправки ваша заявка попадёт к оператору — в течение 24 часов свяжемся с вами по договору и установке QR",
+      "smsNotice": "После подтверждения заявки администратором, на указанный номер придёт SMS от Savin:"
     },
     "footer": {
       "copyright": "© 2026 Savin. Все права защищены.",

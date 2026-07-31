@@ -892,17 +892,19 @@
               {{ t("applyForm.subtitle") }}
             </p>
 
-            <div
-              class="flex flex-wrap items-center justify-center gap-2.5 mb-6"
-            >
-              <span
-                class="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-100 text-slate-700 text-sm px-3.5 py-1.5 rounded-full"
-              >
-                {{ t("applyForm.num") }}
-                <span class="font-mono font-bold text-emerald-700"
-                  >#{{ applicationNumber }}</span
-                >
-              </span>
+            <!-- Ariza raqami (UUID) o'rniga biznes egasi kiritgan telefon
+                 raqami ko'rsatiladi — admin tasdiqlagach shu raqamga SMS
+                 yuboriladi. -->
+            <div class="mb-5 rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-4">
+              <p class="text-xs text-emerald-700 mb-1">
+                {{ tt("applyForm.smsNotice", "Admin arizangizni tasdiqlagach, quyidagi raqamga Savin tomonidan SMS xabar yuboriladi:") }}
+              </p>
+              <p class="text-lg font-bold text-emerald-800 tracking-wide">
+                {{ submittedPhone }}
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-2.5 mb-6">
               <span
                 class="bg-amber-50 border border-amber-100 text-amber-600 text-xs font-semibold px-3 py-1.5 rounded-full animate-pulse"
               >
@@ -1045,6 +1047,8 @@ const currentStep = ref(1);
 const submitted = ref(false);
 const applicationId = ref(null);
 const applicationNumber = ref("");
+// Muvaffaqiyat ekranida ko'rsatiladigan telefon raqami (chiroyli formatda)
+const submittedPhone = ref("");
 const isSubmitting = ref(false);
 const errorMessage = ref("");
 
@@ -1719,6 +1723,11 @@ async function nextStep() {
         payload,
       );
       applicationNumber.value = applicationId.value;
+      // "+998901234567" -> "+998 90 123 45 67"
+      const d = normalizePhone(form.value.phone).replace(/\D/g, "").slice(-9);
+      submittedPhone.value = d
+        ? `+998 ${d.slice(0, 2)} ${d.slice(2, 5)} ${d.slice(5, 7)} ${d.slice(7, 9)}`
+        : form.value.phone;
       submitted.value = true;
       isSubmitting.value = false;
       return;
@@ -1744,6 +1753,7 @@ function resetForm() {
   currentStep.value = 1;
   applicationId.value = null;
   applicationNumber.value = "";
+  submittedPhone.value = "";
   errorMessage.value = "";
   foundAddress.value = "";
   destroyMap();

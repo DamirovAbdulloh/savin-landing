@@ -454,7 +454,7 @@ import { ref, watch, onMounted, nextTick } from "vue";
 import { useLanguage } from "../../i18n/useLanguage";
 import StatsBar from "../../components/Landing/Statsbar.vue";
 import HowItworks from "../../components/Landing/Howitworks.vue";
-import KimlarUchun from "../../components/Landing/KimlarUchun (1).vue";
+import KimlarUchun from "../../components/Landing/KimlarUchun.vue";
 import NegaSavin from "../../components/Landing/NegaSavin.vue";
 import KopSoraladiganSavollar from "../../components/Landing/KopSoraladiganSavollar.vue";
 import ArizaQoldiring from "../../components/Landing/ArizaQoldiring.vue";
