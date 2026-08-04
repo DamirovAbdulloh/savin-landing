@@ -2,69 +2,98 @@
   <Transition name="lang-fade" mode="out-in">
     <div class="bg-white min-h-screen" :key="lang">
       <header
-        class="rounded-b-2xl sticky top-0 bg-white/40 backdrop-blur-md z-50"
+        :class="[
+          'rounded-b-2xl sticky top-0 backdrop-blur-md z-50 transition-colors duration-300',
+          isOverArizaSection ? 'bg-gray-900/80' : 'bg-white/40',
+        ]"
       >
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-16">
             <div>
-              <span
-                class="flex justify-center items-center w-10 text-xl font-bold text-[#89EA5C] px-4 rounded-3xl"
-                >{{ t("applyForm.brandName") }}</span
-              >
+              <img :src="svg" alt="Savin Logo" class="h-4 w-auto sm:h-6" />
             </div>
 
             <nav class="hidden md:flex items-center gap-8">
               <a
                 href="#Howitworks"
                 @click.prevent="scrollToSection('Howitworks')"
-                class="text-gray-700 hover:text-gray-900 text-sm font-medium"
+                :class="[
+                  'text-sm font-medium transition-colors duration-300',
+                  isOverArizaSection
+                    ? 'text-white hover:text-gray-200'
+                    : 'text-gray-700 hover:text-gray-900',
+                ]"
                 >{{ t("nav.howItWorks") }}</a
               >
 
               <a
                 href="#Afzalliklar"
                 @click.prevent="scrollToSection('Afzalliklar')"
-                class="text-gray-700 hover:text-gray-900 text-sm font-medium"
+                :class="[
+                  'text-sm font-medium transition-colors duration-300',
+                  isOverArizaSection
+                    ? 'text-white hover:text-gray-200'
+                    : 'text-gray-700 hover:text-gray-900',
+                ]"
                 >{{ t("nav.benefits") }}</a
               >
 
               <a
                 href="#KopSoraladiganSavollar"
                 @click.prevent="scrollToSection('KopSoraladiganSavollar')"
-                class="text-gray-700 hover:text-gray-900 text-sm font-medium"
+                :class="[
+                  'text-sm font-medium transition-colors duration-300',
+                  isOverArizaSection
+                    ? 'text-white hover:text-gray-200'
+                    : 'text-gray-700 hover:text-gray-900',
+                ]"
                 >{{ t("nav.faq") }}</a
               >
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-4">
-              <!-- Til tanlash: desktop -->
               <div
-                class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1"
+                class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1 transition-colors duration-300"
               >
-                <button
-                  v-for="l in availableLangs"
-                  :key="l"
-                  @click="setLang(l)"
-                  :class="[
-                    'px-3 sm:px-3.5 py-1 cursor-pointer sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300',
-                    lang === l
-                      ? 'bg-lime-400  shadow-md'
-                      : 'text-black hover:text-black',
-                  ]"
+                <div
+                  v-if="!isOverArizaSection"
+                  class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1 transition-colors duration-300"
                 >
-                  {{ l.toUpperCase() }}
-                </button>
+                  <button
+                    v-for="l in availableLangs"
+                    :key="l"
+                    ref="langBtnRefs"
+                    :data-lang="l"
+                    @click="setLang(l)"
+                    :class="[
+                      'px-3 sm:px-3.5 py-1 cursor-pointer sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300',
+                      lang === l
+                        ? 'bg-lime-400 shadow-md text-gray-900'
+                        : 'text-black hover:text-black',
+                    ]"
+                  >
+                    {{ l.toUpperCase() }}
+                  </button>
+                </div>
               </div>
 
               <RouterLink
                 to="ariza"
-                class="bg-lime-400 hover:bg-lime-500 text-white font-semibold px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap"
+                :class="[
+                  isOverArizaSection
+                    ? 'bg-gradient-to-b from-emerald-500 to-emerald-600'
+                    : 'bg-lime-400',
+                ]"
+                class="text-white font-semibold px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap"
               >
                 {{ t("nav.applyButton") }}
               </RouterLink>
 
               <button
-                class="md:hidden text-gray-600 p-1"
+                :class="[
+                  'md:hidden p-1 transition-colors duration-300',
+                  isOverArizaSection ? 'text-white' : 'text-gray-600',
+                ]"
                 @click="mobileMenuOpen = !mobileMenuOpen"
                 aria-label="Menyu"
               >
@@ -93,25 +122,39 @@
               <a
                 href="#Howitworks"
                 @click.prevent="scrollToSection('Howitworks')"
-                class="text-gray-700 hover:text-gray-900 text-sm font-medium"
+                :class="[
+                  'text-sm font-medium transition-colors duration-300',
+                  isOverArizaSection
+                    ? 'text-white hover:text-gray-200'
+                    : 'text-gray-700 hover:text-gray-900',
+                ]"
                 >{{ t("nav.howItWorks") }}</a
               >
 
               <a
                 href="#Afzalliklar"
                 @click.prevent="scrollToSection('Afzalliklar')"
-                class="text-gray-700 hover:text-gray-900 text-sm font-medium"
+                :class="[
+                  'text-sm font-medium transition-colors duration-300',
+                  isOverArizaSection
+                    ? 'text-white hover:text-gray-200'
+                    : 'text-gray-700 hover:text-gray-900',
+                ]"
                 >{{ t("nav.benefits") }}</a
               >
 
               <a
                 href="#KopSoraladiganSavollar"
                 @click.prevent="scrollToSection('KopSoraladiganSavollar')"
-                class="text-gray-700 hover:text-gray-900 text-sm font-medium"
+                :class="[
+                  'text-sm font-medium transition-colors duration-300',
+                  isOverArizaSection
+                    ? 'text-white hover:text-gray-200'
+                    : 'text-gray-700 hover:text-gray-900',
+                ]"
                 >{{ t("nav.faq") }}</a
               >
 
-              <!-- Til tanlash: mobil -->
               <div
                 class="relative flex items-center bg-gray-100 rounded-full p-1 mt-2 self-start"
               >
@@ -137,11 +180,11 @@
           </Transition>
         </div>
       </header>
+
       <main class="bg-[#F7FFF3] px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20">
         <div
           class="grid max-w-7xl mx-auto grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center"
         >
-          <!-- Left Content -->
           <div
             class="space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1"
           >
@@ -255,10 +298,8 @@
               class="relative w-full max-w-[280px] sm:max-w-sm phone-enter"
               :class="phoneVisible ? 'phone-enter-active' : ''"
             >
-              <!-- Phone Frame -->
               <div class="bg-black rounded-3xl p-2 shadow-2xl phone-float">
                 <div class="bg-white rounded-3xl overflow-hidden">
-                  <!-- Phone Status Bar -->
                   <div
                     class="bg-white px-4 py-2 flex justify-between items-center text-xs font-semibold text-gray-900"
                   >
@@ -270,7 +311,6 @@
                   <div
                     class="bg-gradient-to-b from-gray-50 to-white p-4 space-y-3 min-h-96"
                   >
-                    <!-- Header -->
                     <div class="flex items-center justify-between mb-2">
                       <button class="text-gray-600">‹</button>
                       <h2 class="text-lg font-bold text-gray-900">
@@ -408,8 +448,6 @@
 
       <StatsBar />
 
-      <!-- Tartib yuqoridagi menyu bilan bir xil: avval "Qanday ishlaydi",
-           keyin "Afzalliklar" (Nega Savin) -->
       <HowItworks id="Howitworks" />
 
       <NegaSavin id="Afzalliklar" />
@@ -418,7 +456,7 @@
 
       <KopSoraladiganSavollar id="KopSoraladiganSavollar" />
 
-      <ArizaQoldiring />
+      <ArizaQoldiring id="ArizaQoldiring" />
 
       <footer class="bg-gray-50 border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -450,7 +488,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, nextTick } from "vue";
+import { ref, watch, onMounted, onUnmounted, nextTick } from "vue";
 import { useLanguage } from "../../i18n/useLanguage";
 import StatsBar from "../../components/Landing/Statsbar.vue";
 import HowItworks from "../../components/Landing/Howitworks.vue";
@@ -458,9 +496,35 @@ import KimlarUchun from "../../components/Landing/KimlarUchun.vue";
 import NegaSavin from "../../components/Landing/NegaSavin.vue";
 import KopSoraladiganSavollar from "../../components/Landing/KopSoraladiganSavollar.vue";
 import ArizaQoldiring from "../../components/Landing/ArizaQoldiring.vue";
+import svg from "../../assets/svgs/logo-savin-light.svg";
 
 const { t, lang, setLang, availableLangs } = useLanguage();
 const mobileMenuOpen = ref(false);
+
+const isOverArizaSection = ref(false);
+let arizaObserver = null;
+
+function setupArizaObserver() {
+  const arizaSection = document.getElementById("ArizaQoldiring");
+  if (!arizaSection) return;
+
+  arizaObserver = new IntersectionObserver(
+    ([entry]) => {
+      isOverArizaSection.value = entry.isIntersecting;
+    },
+    { rootMargin: "-64px 0px 0px 0px", threshold: 0 },
+  );
+  arizaObserver.observe(arizaSection);
+}
+
+onMounted(async () => {
+  await nextTick();
+  setupArizaObserver();
+});
+
+onUnmounted(() => {
+  arizaObserver?.disconnect();
+});
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -478,17 +542,12 @@ const scrollToSection = (id) => {
   mobileMenuOpen.value = false;
 };
 
-// ---------------- Til toggle indikatori (dinamik, n ta til uchun) ----------------
 const langBtnRefs = ref([]);
 const mobileLangBtnRefs = ref([]);
 const langIndicatorStyle = ref({});
 const mobileLangIndicatorStyle = ref({});
 
 function updateIndicator(refsArr, styleRef) {
-  // MUHIM: Vue 3'da v-for ichidagi template ref massivi render tartibida
-  // bo'lishi kafolatlanmaydi — indeks bo'yicha olish noto'g'ri tugmani
-  // tanlab, oq indikator boshqa til ustida qolib ketardi (sayt RU, pill UZ).
-  // Shuning uchun tugma data-lang atributi bo'yicha topiladi.
   const btn = refsArr.value?.find?.((b) => b?.dataset?.lang === lang.value);
   if (!btn) return;
   styleRef.value = {

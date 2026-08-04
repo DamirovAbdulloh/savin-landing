@@ -2,6 +2,7 @@
   <!-- ============ ASOSIY SEKTSIYA ============ -->
   <section
     ref="sectionRef"
+    id="ArizaQoldiring"
     :class="[
       'relative w-full min-h-screen overflow-hidden bg-gradient-to-r from-green-900 to-green-600   transition-all duration-1000 ease-out transform',
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
