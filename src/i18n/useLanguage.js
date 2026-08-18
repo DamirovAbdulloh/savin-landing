@@ -1,7 +1,8 @@
 import { ref, watch } from "vue";
 import translations from "./translations.json";
 
-const availableLangs = Object.keys(translations);
+// Force the preferred language order and codes
+const availableLangs = ["uz", "ru", "en"];
 const savedLang = localStorage.getItem("lang");
 const initialLang = availableLangs.includes(savedLang) ? savedLang : "uz";
 

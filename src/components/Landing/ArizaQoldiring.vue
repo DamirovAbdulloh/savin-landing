@@ -14,14 +14,14 @@
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 lg:py-8 flex flex-col min-h-screen">
       <!-- ============ YUQORI PANEL: Back + Til ============ -->
       <div class="mb-4 sm:mb-6 flex justify-between items-center gap-3">
-        <div class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1">
-          <button v-for="l in availableLangs" :key="l" @click="setLang(l)" :class="[
+          <div class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1">
+          <button v-for="l in availableLangs" :key="l" @click="setLang(l)" :class="[ 
             'px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300',
             lang === l
               ? 'bg-white text-emerald-900 shadow-md'
               : 'text-white/60 hover:text-white',
           ]">
-            {{ l.toUpperCase() }}
+            {{ l.toLowerCase() }}
           </button>
         </div>
       </div>
@@ -39,10 +39,10 @@
           <div
             class="inline-flex items-center gap-2 bg-emerald-500/15 border border-emerald-400/20 text-emerald-300 text-[11px] sm:text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full mb-4 sm:mb-5">
             <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            {{ tt("applyForm.badge") }}
+            {{ tt("applyForm.badge", "Hamkorlik uchun ariza") }}
           </div>
 
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 sm:mb-4">
