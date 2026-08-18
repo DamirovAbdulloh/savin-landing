@@ -42,7 +42,7 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            {{ tt("applyForm.badge", "Hamkorlik uchun ariza") }}
+            {{ tt("applyForm.badge") }}
           </div>
 
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-3 sm:mb-4">
