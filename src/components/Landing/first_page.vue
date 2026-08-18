@@ -1,178 +1,108 @@
 <template>
   <Transition name="lang-fade" mode="out-in">
-    <div class="bg-white min-h-screen" :key="lang">
-      <header
-        :class="[
-          'rounded-b-2xl sticky top-0 backdrop-blur-md z-50 transition-colors duration-300',
-          isOverArizaSection ? 'bg-gray-900/80' : 'bg-white/40',
-        ]"
-      >
+    <div class="bg-white min-h-screen" :key="lang" id="home">
+      <header :class="[
+        'rounded-b-2xl sticky top-0 backdrop-blur-md z-50 transition-colors duration-300',
+        isOverArizaSection ? 'bg-gray-900/80' : 'bg-white/40',
+      ]">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-16">
-            <div>
+            <button class="cursor-pointer" @click.prevent="scrollToSection('home')">
+
               <img :src="svg" alt="Savin Logo" class="h-4 w-auto sm:h-6" />
-            </div>
+            </button>
 
             <nav class="hidden md:flex items-center gap-8">
-              <a
-                href="#Howitworks"
-                @click.prevent="scrollToSection('Howitworks')"
-                :class="[
-                  'text-sm font-medium transition-colors duration-300',
-                  isOverArizaSection
-                    ? 'text-white hover:text-gray-200'
-                    : 'text-gray-700 hover:text-gray-900',
-                ]"
-                >{{ t("nav.howItWorks") }}</a
-              >
+              <a href="#Howitworks" @click.prevent="scrollToSection('Howitworks')" :class="[
+                'text-sm font-medium transition-colors duration-300',
+                isOverArizaSection
+                  ? 'text-white hover:text-gray-200'
+                  : 'text-gray-700 hover:text-gray-900',
+              ]">{{ t("nav.howItWorks") }}</a>
 
-              <a
-                href="#Afzalliklar"
-                @click.prevent="scrollToSection('Afzalliklar')"
-                :class="[
-                  'text-sm font-medium transition-colors duration-300',
-                  isOverArizaSection
-                    ? 'text-white hover:text-gray-200'
-                    : 'text-gray-700 hover:text-gray-900',
-                ]"
-                >{{ t("nav.benefits") }}</a
-              >
+              <a href="#Afzalliklar" @click.prevent="scrollToSection('Afzalliklar')" :class="[
+                'text-sm font-medium transition-colors duration-300',
+                isOverArizaSection
+                  ? 'text-white hover:text-gray-200'
+                  : 'text-gray-700 hover:text-gray-900',
+              ]">{{ t("nav.benefits") }}</a>
 
-              <a
-                href="#KopSoraladiganSavollar"
-                @click.prevent="scrollToSection('KopSoraladiganSavollar')"
-                :class="[
-                  'text-sm font-medium transition-colors duration-300',
-                  isOverArizaSection
-                    ? 'text-white hover:text-gray-200'
-                    : 'text-gray-700 hover:text-gray-900',
-                ]"
-                >{{ t("nav.faq") }}</a
-              >
+              <a href="#KopSoraladiganSavollar" @click.prevent="scrollToSection('KopSoraladiganSavollar')" :class="[
+                'text-sm font-medium transition-colors duration-300',
+                isOverArizaSection
+                  ? 'text-white hover:text-gray-200'
+                  : 'text-gray-700 hover:text-gray-900',
+              ]">{{ t("nav.faq") }}</a>
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-4">
               <div
-                class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1 transition-colors duration-300"
-              >
-                <div
-                  v-if="!isOverArizaSection"
-                  class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1 transition-colors duration-300"
-                >
-                  <button
-                    v-for="l in availableLangs"
-                    :key="l"
-                    ref="langBtnRefs"
-                    :data-lang="l"
-                    @click="setLang(l)"
+                class="hidden md:flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1 transition-colors duration-300">
+                <div v-if="!isOverArizaSection"
+                  class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1 transition-colors duration-300">
+                  <button  v-for="l in availableLangs" :key="l" ref="langBtnRefs" :data-lang="l" @click="setLang(l)"
                     :class="[
                       'px-3 sm:px-3.5 py-1 cursor-pointer sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300',
                       lang === l
                         ? 'bg-lime-400 shadow-md text-gray-900'
                         : 'text-black hover:text-black',
-                    ]"
-                  >
+                    ]">
                     {{ l.toUpperCase() }}
                   </button>
                 </div>
               </div>
 
-              <RouterLink
-                to="ariza"
-                :class="[
-                  isOverArizaSection
-                    ? 'bg-gradient-to-b from-emerald-500 to-emerald-600'
-                    : 'bg-lime-400',
-                ]"
-                class="text-white font-semibold px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap"
-              >
+              <a href="#ArizaQoldiring" @click.prevent="scrollToSection('ArizaQoldiring')" :class="[
+                isOverArizaSection
+                  ? 'bg-gradient-to-b from-emerald-500 to-emerald-600'
+                  : 'bg-lime-400',
+              ]"
+                class="text-white font-semibold px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm transition-colors whitespace-nowrap">
                 {{ t("nav.applyButton") }}
-              </RouterLink>
+              </a>
 
-              <button
-                :class="[
-                  'md:hidden p-1 transition-colors duration-300',
-                  isOverArizaSection ? 'text-white' : 'text-gray-600',
-                ]"
-                @click="mobileMenuOpen = !mobileMenuOpen"
-                aria-label="Menyu"
-              >
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+              <button ref="mobileMenuBtn" :class="[
+                'md:hidden p-1 transition-colors duration-300',
+                isOverArizaSection ? 'text-white' : 'text-gray-600',
+              ]" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Menyu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
             </div>
           </div>
 
           <Transition name="mobile-nav">
-            <nav
-              v-if="mobileMenuOpen"
-              class="md:hidden pb-4 flex flex-col gap-3"
-            >
-              <a
-                href="#Howitworks"
-                @click.prevent="scrollToSection('Howitworks')"
-                :class="[
-                  'text-sm font-medium transition-colors duration-300',
-                  isOverArizaSection
-                    ? 'text-white hover:text-gray-200'
-                    : 'text-gray-700 hover:text-gray-900',
-                ]"
-                >{{ t("nav.howItWorks") }}</a
-              >
+            <nav v-if="mobileMenuOpen" ref="mobileNav" class="md:hidden pb-4 flex flex-col gap-3">
+              <a href="#Howitworks" @click.prevent="scrollToSection('Howitworks')" :class="[
+                'text-sm font-medium transition-colors duration-300',
+                isOverArizaSection
+                  ? 'text-white hover:text-gray-200'
+                  : 'text-gray-700 hover:text-gray-900',
+              ]">{{ t("nav.howItWorks") }}</a>
 
-              <a
-                href="#Afzalliklar"
-                @click.prevent="scrollToSection('Afzalliklar')"
-                :class="[
-                  'text-sm font-medium transition-colors duration-300',
-                  isOverArizaSection
-                    ? 'text-white hover:text-gray-200'
-                    : 'text-gray-700 hover:text-gray-900',
-                ]"
-                >{{ t("nav.benefits") }}</a
-              >
+              <a href="#Afzalliklar" @click.prevent="scrollToSection('Afzalliklar')" :class="[
+                'text-sm font-medium transition-colors duration-300',
+                isOverArizaSection
+                  ? 'text-white hover:text-gray-200'
+                  : 'text-gray-700 hover:text-gray-900',
+              ]">{{ t("nav.benefits") }}</a>
 
-              <a
-                href="#KopSoraladiganSavollar"
-                @click.prevent="scrollToSection('KopSoraladiganSavollar')"
-                :class="[
-                  'text-sm font-medium transition-colors duration-300',
-                  isOverArizaSection
-                    ? 'text-white hover:text-gray-200'
-                    : 'text-gray-700 hover:text-gray-900',
-                ]"
-                >{{ t("nav.faq") }}</a
-              >
+              <a href="#KopSoraladiganSavollar" @click.prevent="scrollToSection('KopSoraladiganSavollar')" :class="[
+                'text-sm font-medium transition-colors duration-300',
+                isOverArizaSection
+                  ? 'text-white hover:text-gray-200'
+                  : 'text-gray-700 hover:text-gray-900',
+              ]">{{ t("nav.faq") }}</a>
 
-              <div
-                class="relative flex items-center bg-gray-100 rounded-full p-1 mt-2 self-start"
-              >
-                <span
-                  class="absolute top-1 bottom-1 rounded-full bg-white shadow-sm transition-all duration-300 ease-out"
-                  :style="mobileLangIndicatorStyle"
-                ></span>
-                <button
-                  v-for="l in availableLangs"
-                  :key="l"
-                  ref="mobileLangBtnRefs"
-                  :data-lang="l"
-                  @click="setLang(l)"
+              <div class="relative flex items-center bg-gray-100 rounded-full p-1 mt-2 self-start">
+                <button v-for="l in availableLangs" :key="l" ref="langBtnRefs" :data-lang="l" @click="setLang(l)"
                   :class="[
-                    'relative z-10 px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-300 whitespace-nowrap',
-                    lang === l ? 'text-gray-900' : 'text-gray-400',
-                  ]"
-                >
+                    'px-3 sm:px-3.5 py-1 cursor-pointer sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300',
+                    lang === l
+                      ? 'bg-lime-400 shadow-md text-gray-900'
+                      : 'text-black hover:text-black',
+                  ]">
                   {{ l.toUpperCase() }}
                 </button>
               </div>
@@ -182,109 +112,64 @@
       </header>
 
       <main class="bg-[#F7FFF3] px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20">
-        <div
-          class="grid max-w-7xl mx-auto grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center"
-        >
-          <div
-            class="space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1"
-          >
+        <div class="grid max-w-7xl mx-auto grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+          <div class="space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">
             <div>
-              <p
-                class="text-lime-500 text-sm font-semibold tracking-wide uppercase mb-3 sm:mb-4"
-              >
+              <p class="text-lime-500 text-sm font-semibold tracking-wide uppercase mb-3 sm:mb-4">
                 {{ t("hero.badge") }}
               </p>
               <h1
-                class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight min-h-[3.6em] sm:min-h-[2.6em] lg:min-h-[2.4em]"
-              >
+                class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight min-h-[3.6em] sm:min-h-[2.6em] lg:min-h-[2.4em]">
                 {{ typedTitle }}<span class="typing-cursor">|</span>
               </h1>
             </div>
 
-            <p
-              class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 min-h-[3em]"
-            >
+            <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 min-h-[3em]">
               {{ typedDescription
-              }}<span
-                v-if="
-                  typedDescription &&
-                  typedDescription.length < t('hero.description').length
-                "
-                class="typing-cursor"
-                >|</span
-              >
+              }}<span v-if="
+                typedDescription &&
+                typedDescription.length < t('hero.description').length
+              " class="typing-cursor">|</span>
             </p>
 
-            <div
-              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <RouterLink
-                to="ariza"
-                class="bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold px-8 py-3 rounded-full transition-colors text-center"
-              >
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <RouterLink to="ariza"
+                class="bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold px-8 py-3 rounded-full transition-colors text-center">
                 {{ t("hero.applyButton") }}
               </RouterLink>
-              <button
-                @click="scrollToSection('Howitworks')"
-                class="text-lime-600 hover:text-lime-700 font-semibold flex items-center justify-center gap-2"
-              >
+              <button @click="scrollToSection('Howitworks')"
+                class="text-lime-600 hover:text-lime-700 font-semibold flex items-center justify-center gap-2">
                 {{ t("hero.howItWorksButton") }}
                 <span>→</span>
               </button>
             </div>
 
-            <div
-              class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 pt-4 justify-center lg:justify-start"
-            >
-              <div
-                class="flex items-center gap-2 justify-center lg:justify-start"
-              >
-                <svg
-                  class="w-5 h-5 text-lime-500 shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 pt-4 justify-center lg:justify-start">
+              <div class="flex items-center gap-2 justify-center lg:justify-start">
+                <svg class="w-5 h-5 text-lime-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
+                    clip-rule="evenodd" />
                 </svg>
                 <span class="text-gray-700 text-sm">{{
                   t("hero.stats.partners")
                 }}</span>
               </div>
-              <div
-                class="flex items-center gap-2 justify-center lg:justify-start"
-              >
-                <svg
-                  class="w-5 h-5 text-lime-500 shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
+              <div class="flex items-center gap-2 justify-center lg:justify-start">
+                <svg class="w-5 h-5 text-lime-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
+                    clip-rule="evenodd" />
                 </svg>
                 <span class="text-gray-700 text-sm">{{
                   t("hero.stats.members")
                 }}</span>
               </div>
-              <div
-                class="flex items-center gap-2 justify-center lg:justify-start"
-              >
-                <svg
-                  class="w-5 h-5 text-lime-500 shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
+              <div class="flex items-center gap-2 justify-center lg:justify-start">
+                <svg class="w-5 h-5 text-lime-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
+                    clip-rule="evenodd" />
                 </svg>
                 <span class="text-gray-700 text-sm">{{
                   t("hero.stats.free")
@@ -294,23 +179,17 @@
           </div>
 
           <div class="flex justify-center order-1 lg:order-2">
-            <div
-              class="relative w-full max-w-[280px] sm:max-w-sm phone-enter"
-              :class="phoneVisible ? 'phone-enter-active' : ''"
-            >
+            <div class="relative w-full max-w-[280px] sm:max-w-sm phone-enter"
+              :class="phoneVisible ? 'phone-enter-active' : ''">
               <div class="bg-black rounded-3xl p-2 shadow-2xl phone-float">
                 <div class="bg-white rounded-3xl overflow-hidden">
-                  <div
-                    class="bg-white px-4 py-2 flex justify-between items-center text-xs font-semibold text-gray-900"
-                  >
+                  <div class="bg-white px-4 py-2 flex justify-between items-center text-xs font-semibold text-gray-900">
                     <span></span>
                     <span>{{ t("phoneMock.time") }}</span>
                     <span></span>
                   </div>
 
-                  <div
-                    class="bg-gradient-to-b from-gray-50 to-white p-4 space-y-3 min-h-96"
-                  >
+                  <div class="bg-gradient-to-b from-gray-50 to-white p-4 space-y-3 min-h-96">
                     <div class="flex items-center justify-between mb-2">
                       <button class="text-gray-600">‹</button>
                       <h2 class="text-lg font-bold text-gray-900">
@@ -320,10 +199,8 @@
                     </div>
 
                     <div class="flex flex-wrap gap-2 mb-3">
-                      <span
-                        class="bg-lime-400 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full"
-                        >{{ t("phoneMock.filterNearby") }}</span
-                      >
+                      <span class="bg-lime-400 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full">{{
+                        t("phoneMock.filterNearby") }}</span>
                       <span class="text-gray-600 text-xs self-center">{{
                         t("phoneMock.filterTopRated")
                       }}</span>
@@ -334,57 +211,39 @@
                     </p>
 
                     <div class="space-y-3 mt-4">
-                      <div
-                        v-for="(business, idx) in t('phoneMock.businesses')"
-                        :key="idx"
+                      <div v-for="(business, idx) in t('phoneMock.businesses')" :key="idx"
                         class="bg-white rounded-xl p-3 shadow-sm card-pop"
-                        :style="{ animationDelay: idx * 120 + 300 + 'ms' }"
-                      >
+                        :style="{ animationDelay: idx * 120 + 300 + 'ms' }">
                         <div class="flex gap-3">
                           <div
                             class="w-12 h-12 shrink-0 bg-lime-400 rounded-xl flex items-center justify-center font-bold text-gray-900"
-                            :class="
-                              idx === 1
-                                ? 'bg-purple-500 text-white'
-                                : idx === 2
-                                  ? 'bg-orange-400'
-                                  : ''
-                            "
-                          >
+                            :class="idx === 1
+                              ? 'bg-purple-500 text-white'
+                              : idx === 2
+                                ? 'bg-orange-400'
+                                : ''
+                              ">
                             {{ business.name.charAt(0) }}
                           </div>
                           <div class="flex-1 min-w-0">
-                            <h3
-                              class="font-semibold text-gray-900 text-sm truncate"
-                            >
+                            <h3 class="font-semibold text-gray-900 text-sm truncate">
                               {{ business.name }}
                             </h3>
                             <p class="text-gray-600 text-xs truncate">
                               {{ business.location }} • {{ business.distance }}
                             </p>
                             <div class="flex items-center gap-1 mt-1">
-                              <span
-                                class="text-xs font-semibold text-gray-900"
-                                >{{ business.rating }}</span
-                              >
-                              <span class="text-gray-500 text-xs"
-                                >• {{ business.time }}</span
-                              >
+                              <span class="text-xs font-semibold text-gray-900">{{ business.rating }}</span>
+                              <span class="text-gray-500 text-xs">• {{ business.time }}</span>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div
-                      class="flex justify-around items-center mt-6 pt-4 border-t border-gray-200 text-gray-600"
-                    >
+                    <div class="flex justify-around items-center mt-6 pt-4 border-t border-gray-200 text-gray-600">
                       <button class="flex flex-col items-center gap-1">
-                        <svg
-                          class="w-6 h-6"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                         </svg>
                         <span class="text-xs">{{
@@ -392,31 +251,19 @@
                         }}</span>
                       </button>
                       <button class="flex flex-col items-center gap-1">
-                        <svg
-                          class="w-6 h-6"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                           <path
-                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H3V5h12v4z"
-                          />
+                            d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H3V5h12v4z" />
                         </svg>
                         <span class="text-xs">{{
                           t("phoneMock.navBar.catalog")
                         }}</span>
                       </button>
                       <button class="flex flex-col items-center gap-1">
-                        <div
-                          class="w-6 h-6 bg-lime-400 rounded text-gray-900 flex items-center justify-center"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                          >
+                        <div class="w-6 h-6 bg-lime-400 rounded text-gray-900 flex items-center justify-center">
+                          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                             <path
-                              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"
-                            />
+                              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z" />
                           </svg>
                         </div>
                         <span class="text-xs">{{
@@ -424,14 +271,9 @@
                         }}</span>
                       </button>
                       <button class="flex flex-col items-center gap-1">
-                        <svg
-                          class="w-6 h-6"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                           <path
-                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                          />
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                         </svg>
                         <span class="text-xs">{{
                           t("phoneMock.navBar.profile")
@@ -456,13 +298,11 @@
 
       <KopSoraladiganSavollar id="KopSoraladiganSavollar" />
 
-      <ArizaQoldiring id="ArizaQoldiring" />
+      <ArizaQoldiring id="ArizaQoldiring" class="" />
 
       <footer class="bg-gray-50 border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div
-            class="flex flex-col sm:flex-row justify-between items-center gap-4"
-          >
+          <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p class="text-sm text-gray-600">{{ t("footer.copyright") }}</p>
             <div class="flex gap-6">
               <a href="#" class="text-sm text-gray-600 hover:text-gray-900">{{
@@ -472,13 +312,9 @@
                 t("footer.privacyPolicy")
               }}</a>
 
-              <a
-                :href="`https://t.me/${t('footer.telegram').replace('@', '')}`"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm text-lime-600 hover:text-lime-700 font-medium"
-                >{{ t("footer.telegram") }}</a
-              >
+              <a :href="`https://t.me/${t('footer.telegram').replace('@', '')}`" target="_blank"
+                rel="noopener noreferrer" class="text-sm text-lime-600 hover:text-lime-700 font-medium">{{
+                  t("footer.telegram") }}</a>
             </div>
           </div>
         </div>
@@ -500,6 +336,8 @@ import svg from "../../assets/svgs/logo-savin-light.svg";
 
 const { t, lang, setLang, availableLangs } = useLanguage();
 const mobileMenuOpen = ref(false);
+const mobileMenuBtn = ref(null);
+const mobileNav = ref(null);
 
 const isOverArizaSection = ref(false);
 let arizaObserver = null;
@@ -566,6 +404,24 @@ onMounted(updateIndicators);
 watch(lang, updateIndicators);
 watch(mobileMenuOpen, (open) => {
   if (open) updateIndicators();
+});
+
+function onDocumentClick(e) {
+  if (!mobileMenuOpen.value) return;
+  const btn = mobileMenuBtn.value;
+  const nav = mobileNav.value;
+  const target = e.target;
+  if (btn && btn.contains(target)) return;
+  if (nav && nav.contains(target)) return;
+  mobileMenuOpen.value = false;
+}
+
+onMounted(() => {
+  document.addEventListener("click", onDocumentClick);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", onDocumentClick);
 });
 
 const typedTitle = ref("");
@@ -653,6 +509,7 @@ a {
 }
 
 @keyframes blink-cursor {
+
   0%,
   50% {
     opacity: 1;
@@ -682,6 +539,7 @@ a {
 }
 
 @keyframes float-phone {
+
   0%,
   100% {
     transform: translateY(0);

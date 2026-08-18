@@ -206,6 +206,7 @@
       "requiredNote": "* Fields marked with an asterisk are required",
       "step1Fields": {
         "businessName": "Business name *",
+        "businessNamePlaceholder": "e.g. Baraka Restoran",
         "category": "Category *",
         "categoryPlaceholder": "Select",
         "categoryOptions": [
@@ -221,7 +222,9 @@
           "LLC"
         ],
         "responsiblePerson": "Full name of responsible person *",
-        "aboutBusiness": "Brief description of business"
+        "aboutBusiness": "Brief description of business",
+        "responsiblePersonPlaceholder": "Full name, e.g. John Doe",
+        "aboutBusinessPlaceholder": "A sentence or two about your business..."
       },
       "stepIndicator1": "Step 1/4",
       "nextButton": "Next",
@@ -231,10 +234,15 @@
       "brandName": "savin",
       "step2Fields": {
         "phone": "Phone number *",
+        "phonePlaceholder": "+998 90 000 00 00",
         "email": "Email address",
+        "emailPlaceholder": "info@business.uz",
         "instagram": "Instagram",
+        "instagramPlaceholder": "@your_handle",
         "telegramChannel": "Telegram channel",
-        "website": "Website"
+        "telegramPlaceholder": "t.me/your_channel",
+        "website": "Website",
+        "websitePlaceholder": "www.your-site.uz"
       },
       "step3Fields": {
         "region": "Region *",
@@ -244,6 +252,11 @@
         "fullAddress": "Full address *",
         "fullAddressPlaceholder": "Street, building, landmark...",
         "workingDays": "Working days",
+        "workingDaysOptions": [
+          "Monday - Friday",
+          "Monday - Saturday",
+          "Everyday"
+        ],
         "workingDaysDefault": "Monday - Friday",
         "workingHours": "Working hours",
         "workingHoursDefault": "09:00 - 18:00",
@@ -263,6 +276,10 @@
         "minPurchaseAmount": "Min. purchase amount (UZS)",
         "minPurchaseDefault": "50000",
         "additionalType": "Additional type",
+        "additionalTypeOptions": [
+          "All products",
+          "Min. purchase amount"
+        ],
         "additionalTypeDefault": "All products",
         "panelLogin": "Business panel login *",
         "panelLoginHint": "For example: mybusiness@savin.uz — you will use it to sign in to the business panel",
@@ -271,6 +288,37 @@
         "panelLoginTaken": "This login is already taken",
         "panelPassword": "Business panel password *",
         "panelPasswordHint": "At least 6 characters (letters or digits)"
+      },
+      "errors": {
+        "requiredBusinessName": "Please enter the business name.",
+        "selectCategory": "Please select a category.",
+        "selectType": "Please select the business type.",
+        "requiredContact": "Please enter the full name of the responsible person.",
+        "requiredAbout": "Please provide a brief description of your business.",
+        "invalidPhone": "Please enter a valid phone number (+998 XX XXX XX XX).",
+        "invalidEmail": "Please enter a valid email address.",
+        "selectRegion": "Please select a region.",
+        "selectDistrict": "Please select a city/district.",
+        "requiredAddress": "Please enter the full address.",
+        "locationRequired": "Please mark the exact location on the map (search or click on the map).",
+        "selectWorkDays": "Please select working days.",
+        "workHoursRequired": "Please enter working hours (from / to).",
+        "workHoursOrder": "End time must be after start time.",
+        "discountRequired": "Please select or enter a discount percentage.",
+        "discountRange": "Discount must be between 5 and 100.",
+        "selectAdditionalType": "Please select an additional condition.",
+        "minSumRequired": "Please enter the minimum purchase amount.",
+        "panelLoginRequired": "Please enter business panel login.",
+        "panelLoginFormat": "Login should be in example@savin.uz format.",
+        "panelLoginTaken": "This login is already taken. Choose another.",
+        "panelPasswordInvalid": "Password must be at least 6 letters or digits.",
+        "addressSearchEmpty": "Please enter an address first.",
+        "addressNotFound": "Address not found. Please mark the location on the map manually.",
+        "searchError": "Error searching for address."
+      },
+      "messages": {
+        "fillFields": "Please correct the highlighted fields.",
+        "unknownError": "An unknown error occurred."
       },
       "submitNote": "Once submitted, your application will reach an operator — we'll contact you within 24 hours regarding the contract and QR setup",
       "smsNotice": "Once an admin approves your application, Savin will send an SMS to this number:"
@@ -489,6 +537,7 @@
       "requiredNote": "* bilan belgilangan maydonlar majburiy",
       "step1Fields": {
         "businessName": "Biznes nomi *",
+        "businessNamePlaceholder": "Masalan: Baraka Restoran",
         "category": "Kategoriya *",
         "categoryPlaceholder": "Tanlang",
         "categoryOptions": [
@@ -504,7 +553,9 @@
           "MChJ"
         ],
         "responsiblePerson": "Mas'ul shaxs FIO *",
-        "aboutBusiness": "Biznes haqida qisqacha"
+        "aboutBusiness": "Biznes haqida qisqacha",
+        "responsiblePersonPlaceholder": "To'liq ism sharif",
+        "aboutBusinessPlaceholder": "Faoliyatingiz haqida 1-2 jumla..."
       },
       "stepIndicator1": "1/4 qadam",
       "nextButton": "Keyingi",
@@ -514,10 +565,15 @@
       "brandName": "savin",
       "step2Fields": {
         "phone": "Telefon raqami *",
+        "phonePlaceholder": "+998 90 000 00 00",
         "email": "Email manzili",
+        "emailPlaceholder": "info@biznes.uz",
         "instagram": "Instagram",
+        "instagramPlaceholder": "@your_handle",
         "telegramChannel": "Telegram kanali",
-        "website": "Veb-sayt"
+        "telegramPlaceholder": "t.me/kanalingiz",
+        "website": "Veb-sayt",
+        "websitePlaceholder": "www.sizning-saytingiz.uz"
       },
       "step3Fields": {
         "region": "Viloyat *",
@@ -527,6 +583,11 @@
         "fullAddress": "To'liq manzil *",
         "fullAddressPlaceholder": "Ko'cha, uy, mo'ljal...",
         "workingDays": "Ish kunlari",
+        "workingDaysOptions": [
+          "Dushanba - Juma",
+          "Dushanba - Shanba",
+          "Har kuni"
+        ],
         "workingDaysDefault": "Dushanba - Juma",
         "workingHours": "Ish vaqti",
         "workingHoursDefault": "09:00 - 18:00",
@@ -546,6 +607,10 @@
         "minPurchaseAmount": "Min. xarid summasi (so'm)",
         "minPurchaseDefault": "50000",
         "additionalType": "Qo'shimcha turi",
+        "additionalTypeOptions": [
+          "Barcha mahsulotlar",
+          "Minimal xarid summasi"
+        ],
         "additionalTypeDefault": "Barcha mahsulotlar",
         "panelLogin": "Biznes panel logini *",
         "panelLoginHint": "Masalan: biznesim@savin.uz — biznes panelga shu login bilan kirasiz",
@@ -554,6 +619,37 @@
         "panelLoginTaken": "Bu login band",
         "panelPassword": "Biznes panel paroli *",
         "panelPasswordHint": "Kamida 6 ta belgi (harf yoki raqam)"
+      },
+      "errors": {
+        "requiredBusinessName": "Biznes nomini kiriting.",
+        "selectCategory": "Kategoriyani tanlang.",
+        "selectType": "Biznes turini tanlang.",
+        "requiredContact": "Mas'ul shaxsning to'liq ismini kiriting.",
+        "requiredAbout": "Faoliyatingiz haqida qisqacha yozing.",
+        "invalidPhone": "Telefon raqamini to'g'ri kiriting (+998 XX XXX XX XX).",
+        "invalidEmail": "Email manzilini to'g'ri kiriting.",
+        "selectRegion": "Viloyatni tanlang.",
+        "selectDistrict": "Tuman/shaharni tanlang.",
+        "requiredAddress": "To'liq manzilni kiriting.",
+        "locationRequired": "Xaritada binoyingizning aniq joyini belgilang (qidiring yoki xaritaga bosing).",
+        "selectWorkDays": "Ish kunlarini tanlang.",
+        "workHoursRequired": "Ish vaqtini kiriting (dan / gacha).",
+        "workHoursOrder": "Tugash vaqti boshlanish vaqtidan keyin bo'lishi kerak.",
+        "discountRequired": "Chegirma foizini tanlang yoki kiriting.",
+        "discountRange": "Chegirma foizi 5 dan 100 gacha bo'lishi kerak.",
+        "selectAdditionalType": "Qo'shimcha shartni tanlang.",
+        "minSumRequired": "Minimal xarid summasini kiriting.",
+        "panelLoginRequired": "Biznes panel loginini kiriting.",
+        "panelLoginFormat": "Login example@savin.uz ko'rinishida bo'lishi kerak.",
+        "panelLoginTaken": "Bu login band — boshqasini tanlang.",
+        "panelPasswordInvalid": "Parol kamida 6 ta harf yoki raqamdan iborat bo'lishi kerak.",
+        "addressSearchEmpty": "Avval manzilni kiriting.",
+        "addressNotFound": "Manzil topilmadi. Xaritaga bosib joyni qo'lda belgilang.",
+        "searchError": "Manzilni qidirishda xatolik yuz berdi."
+      },
+      "messages": {
+        "fillFields": "Iltimos, qizil rangda belgilangan maydonlarni to'g'ri to'ldiring.",
+        "unknownError": "Noma'lum xatolik yuz berdi."
       },
       "submitNote": "Yuborilgach arizangiz operatorga tushadi — 24 soat ichida shartnoma va QR o'rnatish bo'yicha bog'lanamiz",
       "smsNotice": "Admin arizangizni tasdiqlagach, quyidagi raqamga Savin tomonidan SMS xabar yuboriladi:"
@@ -772,6 +868,7 @@
       "requiredNote": "* поля, отмеченные звёздочкой, обязательны",
       "step1Fields": {
         "businessName": "Название бизнеса *",
+        "businessNamePlaceholder": "Например: Baraka Restoran",
         "category": "Категория *",
         "categoryPlaceholder": "Выберите",
         "categoryOptions": [
@@ -787,7 +884,9 @@
           "ООО"
         ],
         "responsiblePerson": "ФИО ответственного лица *",
-        "aboutBusiness": "Краткая информация о бизнесе"
+        "aboutBusiness": "Краткая информация о бизнесе",
+        "responsiblePersonPlaceholder": "ФИО, например Иван Иванов",
+        "aboutBusinessPlaceholder": "Пара предложений о вашем бизнесе..."
       },
       "stepIndicator1": "Шаг 1/4",
       "nextButton": "Далее",
@@ -797,10 +896,15 @@
       "brandName": "savin",
       "step2Fields": {
         "phone": "Номер телефона *",
+        "phonePlaceholder": "+998 90 000 00 00",
         "email": "Адрес электронной почты",
+        "emailPlaceholder": "info@business.uz",
         "instagram": "Instagram",
+        "instagramPlaceholder": "@your_handle",
         "telegramChannel": "Telegram-канал",
-        "website": "Веб-сайт"
+        "telegramPlaceholder": "t.me/your_channel",
+        "website": "Веб-сайт",
+        "websitePlaceholder": "www.your-site.uz"
       },
       "step3Fields": {
         "region": "Область *",
@@ -810,6 +914,11 @@
         "fullAddress": "Полный адрес *",
         "fullAddressPlaceholder": "Улица, дом, ориентир...",
         "workingDays": "Рабочие дни",
+        "workingDaysOptions": [
+          "Понедельник - Пятница",
+          "Понедельник - Суббота",
+          "Каждый день"
+        ],
         "workingDaysDefault": "Понедельник - Пятница",
         "workingHours": "Рабочее время",
         "workingHoursDefault": "09:00 - 18:00",
@@ -829,6 +938,10 @@
         "minPurchaseAmount": "Мин. сумма покупки (сум)",
         "minPurchaseDefault": "50000",
         "additionalType": "Дополнительный тип",
+        "additionalTypeOptions": [
+          "Все товары",
+          "Мин. сумма покупки"
+        ],
         "additionalTypeDefault": "Все товары",
         "panelLogin": "Логин бизнес-панели *",
         "panelLoginHint": "Например: mybusiness@savin.uz — вы будете входить в бизнес-панель с этим логином",
@@ -837,6 +950,37 @@
         "panelLoginTaken": "Этот логин уже занят",
         "panelPassword": "Пароль бизнес-панели *",
         "panelPasswordHint": "Не менее 6 символов (буквы или цифры)"
+      },
+      "errors": {
+        "requiredBusinessName": "Пожалуйста, укажите название бизнеса.",
+        "selectCategory": "Пожалуйста, выберите категорию.",
+        "selectType": "Пожалуйста, выберите тип бизнеса.",
+        "requiredContact": "Пожалуйста, укажите ФИО ответственного лица.",
+        "requiredAbout": "Пожалуйста, кратко опишите ваш бизнес.",
+        "invalidPhone": "Пожалуйста, укажите корректный номер телефона (+998 XX XXX XX XX).",
+        "invalidEmail": "Пожалуйста, укажите корректный адрес электронной почты.",
+        "selectRegion": "Пожалуйста, выберите область.",
+        "selectDistrict": "Пожалуйста, выберите город/район.",
+        "requiredAddress": "Пожалуйста, укажите полный адрес.",
+        "locationRequired": "Пожалуйста, отметьте точное место на карте (поиск или клик на карте).",
+        "selectWorkDays": "Пожалуйста, укажите рабочие дни.",
+        "workHoursRequired": "Пожалуйста, укажите рабочие часы (с / по).",
+        "workHoursOrder": "Время окончания должно быть позже времени начала.",
+        "discountRequired": "Пожалуйста, укажите процент скидки.",
+        "discountRange": "Процент скидки должен быть в диапазоне от 5 до 100.",
+        "selectAdditionalType": "Пожалуйста, выберите дополнительное условие.",
+        "minSumRequired": "Пожалуйста, укажите минимальную сумму покупки.",
+        "panelLoginRequired": "Пожалуйста, укажите логин бизнес-панели.",
+        "panelLoginFormat": "Логин должен быть в формате example@savin.uz.",
+        "panelLoginTaken": "Этот логин уже занят. Выберите другой.",
+        "panelPasswordInvalid": "Пароль должен содержать минимум 6 символов (буквы или цифры).",
+        "addressSearchEmpty": "Пожалуйста, сначала введите адрес.",
+        "addressNotFound": "Адрес не найден. Пожалуйста, отметьте место на карте вручную.",
+        "searchError": "Ошибка при поиске адреса."
+      },
+      "messages": {
+        "fillFields": "Пожалуйста, корректно заполните выделенные поля.",
+        "unknownError": "Произошла неизвестная ошибка."
       },
       "submitNote": "После отправки ваша заявка попадёт к оператору — в течение 24 часов свяжемся с вами по договору и установке QR",
       "smsNotice": "После подтверждения заявки администратором, на указанный номер придёт SMS от Savin:"
