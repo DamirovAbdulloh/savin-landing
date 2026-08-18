@@ -286,9 +286,9 @@
                   <label :class="labelClass">
                     {{ t("applyForm.step2Fields.website") }}
                   </label>
-                  <input v-model="form.website" type="text" inputmode="url"
-                    :placeholder="t('applyForm.step2Fields.websitePlaceholder')" :class="fieldClass()"
-                    @blur="onWebsiteBlur" />
+                    <input v-model="form.website" type="text" inputmode="url"
+                      :placeholder="t('applyForm.step2Fields.websitePlaceholder')" :class="fieldClass()"
+                      @input="onWebsiteInput" @blur="onWebsiteBlur" />
                   <p v-if="fieldErrors.website" :class="errorClass">{{ fieldErrors.website }}</p>
                 </div>
               </div>
@@ -1291,7 +1291,12 @@ function isValidWebsite(val) {
   const trimmed = val.trim();
   try {
     // If missing protocol, try adding https://
-    const maybe = /^(https?:\/\/)/i.test(trimmed) ? trimmed : `https://${trimmed}`;
+    let host = trimmed.replace(/^(https?:\/\/)*/i, "").replace(/^www\./i, "").replace(/\/+$/g, "");
+    // If user entered only a slug like "user", assume .uz and add www.
+    if (!host.includes(".")) host = `www.${host}.uz`;
+    // If host doesn't start with www., add it (common expectation for business sites)
+    if (!/^www\./i.test(host)) host = `www.${host}`;
+    const maybe = `https://${host}`;
     const u = new URL(maybe);
     return !!u.hostname;
   } catch (e) {
@@ -1333,12 +1338,45 @@ function onTelegramBlur() {
   form.value.telegram = `https://t.me/${v}`;
 }
 
+function onWebsiteInput(e) {
+  const raw = e.target.value || "";
+  if (!raw) {
+    form.value.website = "";
+    return;
+  }
+  // Remove spaces and leading protocol/slashes
+  let v = raw.replace(/\s+/g, "").replace(/^(https?:\/\/)*/i, "").replace(/^\/+/, "").replace(/\/+$/g, "");
+
+  // If user prefixed with www., keep www and ensure .uz when appropriate
+  if (/^www\./i.test(v)) {
+    v = v.replace(/^www\./i, "");
+    if (!v.includes(".")) {
+      form.value.website = `www.${v}.uz`;
+    } else {
+      form.value.website = `www.${v}`;
+    }
+    return;
+  }
+
+  // If there's no dot and user typed a short slug, append .uz for UX
+  if (!v.includes(".") && v.length >= 3) {
+    form.value.website = `${v}.uz`;
+    return;
+  }
+
+  // Otherwise keep sanitized value
+  form.value.website = v;
+}
+
 function onWebsiteBlur() {
   let v = (form.value.website || "").trim();
   if (!v) return;
-  // If user entered without protocol, prefix https://
-  if (!/^(https?:\/\/)/i.test(v)) v = `https://${v}`;
-  form.value.website = v;
+  // Normalize: remove protocol and leading www., trim trailing slashes
+  v = v.replace(/^(https?:\/\/)/i, "").replace(/^www\./i, "").replace(/\/+$/g, "");
+  // If user wrote a simple slug (e.g. "user"), assume .uz TLD
+  if (!v.includes(".")) v = `${v}.uz`;
+  // Always store with https:// prefix for consistency
+  form.value.website = `https://${v}`;
 }
 
 // ---------------- Validatsiya ----------------

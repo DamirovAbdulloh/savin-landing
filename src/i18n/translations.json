@@ -242,7 +242,7 @@
         "telegramChannel": "Telegram channel",
         "telegramPlaceholder": "t.me/your_channel",
         "website": "Website",
-        "websitePlaceholder": "www.your-site.uz"
+        "websitePlaceholder": "www.user.uz"
       },
       "step3Fields": {
         "region": "Region *",
@@ -294,7 +294,7 @@
       "errors": {
         "invalidInstagram": "Please enter Instagram username starting with @.",
         "invalidTelegram": "Please enter Telegram channel as a t.me link.",
-        "invalidWebsite": "Please enter a valid website URL (e.g. https://example.uz).",
+        "invalidWebsite": "Website address is invalid (e.g. www.biznes.uz).",
         "requiredBusinessName": "Please enter the business name.",
         "selectCategory": "Please select a category.",
         "selectType": "Please select the business type.",
@@ -578,7 +578,7 @@
         "telegramChannel": "Telegram kanali",
         "telegramPlaceholder": "t.me/kanalingiz",
         "website": "Veb-sayt",
-        "websitePlaceholder": "www.sizning-saytingiz.uz"
+        "websitePlaceholder": "www.user.uz"
       },
       "step3Fields": {
         "region": "Viloyat *",
@@ -630,7 +630,7 @@
       "errors": {
         "invalidInstagram": "Iltimos, Instagram foydalanuvchi nomini @belgi bilan kiriting.",
         "invalidTelegram": "Iltimos, Telegram kanaliga t.me linkini kiriting.",
-        "invalidWebsite": "Iltimos to'g'ri veb-sayt manzilini kiriting (masalan, https://example.uz).",
+        "invalidWebsite": "Veb-sayt manzili noto'g'ri (masalan: www.biznes.uz).",
         "requiredBusinessName": "Biznes nomini kiriting.",
         "selectCategory": "Kategoriyani tanlang.",
         "selectType": "Biznes turini tanlang.",
@@ -914,7 +914,7 @@
         "telegramChannel": "Telegram-канал",
         "telegramPlaceholder": "t.me/your_channel",
         "website": "Веб-сайт",
-        "websitePlaceholder": "www.your-site.uz"
+        "websitePlaceholder": "www.user.uz"
       },
       "step3Fields": {
         "region": "Область *",
@@ -966,7 +966,7 @@
       "errors": {
         "invalidInstagram": "Пожалуйста, укажите имя пользователя Instagram, начиная с @.",
         "invalidTelegram": "Пожалуйста, укажите Telegram-канал в виде ссылки t.me.",
-        "invalidWebsite": "Пожалуйста, укажите корректный URL сайта (например, https://example.uz).",
+        "invalidWebsite": "Неверный адрес сайта (например: www.biznes.uz).",
         "requiredBusinessName": "Пожалуйста, укажите название бизнеса.",
         "selectCategory": "Пожалуйста, выберите категорию.",
         "selectType": "Пожалуйста, выберите тип бизнеса.",
