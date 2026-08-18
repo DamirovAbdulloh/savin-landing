@@ -258,18 +258,34 @@
                   </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label :class="labelClass">
                       {{ t("applyForm.step2Fields.instagram") }}
                     </label>
-                    <input v-model="form.instagram" type="text" :placeholder="t('applyForm.step2Fields.instagramPlaceholder')" :class="fieldClass()" />
+                    <input
+                      v-model="form.instagram"
+                      type="text"
+                      :placeholder="t('applyForm.step2Fields.instagramPlaceholder')"
+                      :class="fieldClass()"
+                      @focus="onInstagramFocus"
+                      @input="onInstagramInput"
+                      @blur="onInstagramBlur"
+                    />
+                    <p v-if="fieldErrors.instagram" :class="errorClass">{{ fieldErrors.instagram }}</p>
                   </div>
                   <div>
                     <label :class="labelClass">
                       {{ t("applyForm.step2Fields.telegramChannel") }}
                     </label>
-                    <input v-model="form.telegram" type="text" :placeholder="t('applyForm.step2Fields.telegramPlaceholder')" :class="fieldClass()" />
+                    <input
+                      v-model="form.telegram"
+                      type="text"
+                      :placeholder="t('applyForm.step2Fields.telegramPlaceholder')"
+                      :class="fieldClass()"
+                      @blur="onTelegramBlur"
+                    />
+                    <p v-if="fieldErrors.telegram" :class="errorClass">{{ fieldErrors.telegram }}</p>
                   </div>
                 </div>
 
@@ -277,8 +293,15 @@
                   <label :class="labelClass">
                     {{ t("applyForm.step2Fields.website") }}
                   </label>
-                    <input v-model="form.website" type="text" inputmode="url" :placeholder="t('applyForm.step2Fields.websitePlaceholder')"
-                      :class="fieldClass()" />
+                    <input
+                      v-model="form.website"
+                      type="text"
+                      inputmode="url"
+                      :placeholder="t('applyForm.step2Fields.websitePlaceholder')"
+                      :class="fieldClass()"
+                      @blur="onWebsiteBlur"
+                    />
+                    <p v-if="fieldErrors.website" :class="errorClass">{{ fieldErrors.website }}</p>
                 </div>
               </div>
 
@@ -782,6 +805,9 @@ const fieldErrors = reactive({
   about: "",
   phone: "",
   email: "",
+  instagram: "",
+  telegram: "",
+  website: "",
   viloyat: "",
   tuman: "",
   address: "",
@@ -925,7 +951,8 @@ const discountOptions = computed(() => {
 // Login formati: example@savin.uz. Foydalanuvchi yozayotganda backend'dan
 // bandligi so'raladi (debounce bilan) — band bo'lsa darhol ko'rsatiladi.
 const PANEL_LOGIN_RE = /^[a-z0-9][a-z0-9._-]*@savin\.uz$/i;
-const PANEL_PASSWORD_RE = /^[a-zA-Z0-9]{6,}$/;
+// Allow any characters, require at least 6 chars to accept generated passwords
+const PANEL_PASSWORD_RE = /^.{6,}$/;
 const loginCheckStatus = ref(""); // "" | checking | available | taken | invalid
 let loginCheckTimer = null;
 let loginCheckSeq = 0;
@@ -1242,6 +1269,71 @@ function isValidUzPhone(phone) {
   return /^\+998\d{9}$/.test(normalized);
 }
 
+function isValidInstagram(val) {
+  if (!val) return false;
+  return /^@[A-Za-z0-9_.]{1,}$/.test(val.trim());
+}
+
+function isValidTelegram(val) {
+  if (!val) return false;
+  try {
+    const url = val.trim();
+    // Accept https://t.me/... or t.me/..., normalize earlier on blur
+    return /^(https?:\/\/)?(www\.)?t\.me\/[A-Za-z0-9_]{1,}$/.test(url);
+  } catch (e) {
+    return false;
+  }
+}
+
+function isValidWebsite(val) {
+  if (!val) return false;
+  const trimmed = val.trim();
+  try {
+    // If missing protocol, try adding https://
+    const maybe = /^(https?:\/\/)/i.test(trimmed) ? trimmed : `https://${trimmed}`;
+    const u = new URL(maybe);
+    return !!u.hostname;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Input handlers / normalizers
+function onInstagramFocus() {
+  if (!form.value.instagram) form.value.instagram = "@";
+}
+
+function onInstagramInput(e) {
+  const raw = e.target.value || "";
+  if (!raw) {
+    form.value.instagram = "";
+    return;
+  }
+  // Ensure single leading @ and no spaces at start
+  const cleaned = raw.replace(/^@+/, "@").replace(/\s+/g, "");
+  form.value.instagram = cleaned;
+}
+
+function onInstagramBlur() {
+  if (form.value.instagram === "@") form.value.instagram = "";
+}
+
+function onTelegramBlur() {
+  let v = (form.value.telegram || "").trim();
+  if (!v) return;
+  // Remove leading protocol/at signs and normalize to https://t.me/slug
+  v = v.replace(/^(https?:\/\/)/i, "").replace(/^www\./i, "").replace(/^@+/, "").replace(/^t\.me\//i, "").replace(/^\/+/, "");
+  form.value.telegram = `https://t.me/${v}`;
+}
+
+function onWebsiteBlur() {
+  let v = (form.value.website || "").trim();
+  if (!v) return;
+  // If user entered without protocol, prefix https://
+  if (!/^(https?:\/\/)/i.test(v)) v = `https://${v}`;
+  form.value.website = v;
+}
+
 // ---------------- Validatsiya ----------------
 
 function validateStep1() {
@@ -1272,17 +1364,35 @@ function validateStep1() {
 }
 
 function validateStep2() {
-  clearFieldErrors(["phone", "email"]);
+  clearFieldErrors(["phone", "email", "instagram", "telegram", "website"]);
   let ok = true;
 
   if (!form.value.phone.trim() || !isValidUzPhone(form.value.phone)) {
     fieldErrors.phone = t("applyForm.errors.invalidPhone");
     ok = false;
   }
-  if (!form.value.email.trim() || !isValidEmail(form.value.email)) {
+
+  // Email is optional now; validate only if present
+  if (form.value.email && form.value.email.trim() && !isValidEmail(form.value.email)) {
     fieldErrors.email = t("applyForm.errors.invalidEmail");
     ok = false;
   }
+
+  if (!form.value.instagram || !isValidInstagram(form.value.instagram)) {
+    fieldErrors.instagram = tt("applyForm.errors.invalidInstagram", "Iltimos, Instagram foydalanuvchi nomini @belgi bilan kiriting.");
+    ok = false;
+  }
+
+  if (!form.value.telegram || !isValidTelegram(form.value.telegram)) {
+    fieldErrors.telegram = tt("applyForm.errors.invalidTelegram", "Iltimos, Telegram kanaliga t.me linkini kiriting.");
+    ok = false;
+  }
+
+  if (!form.value.website || !isValidWebsite(form.value.website)) {
+    fieldErrors.website = tt("applyForm.errors.invalidWebsite", "Iltimos to'g'ri veb-sayt manzilini kiriting (masalan, https://example.uz).");
+    ok = false;
+  }
+
   return ok;
 }
 
