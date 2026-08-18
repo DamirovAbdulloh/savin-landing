@@ -14,8 +14,8 @@
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6 lg:py-8 flex flex-col min-h-screen">
       <!-- ============ YUQORI PANEL: Back + Til ============ -->
       <div class="mb-4 sm:mb-6 flex justify-between items-center gap-3">
-          <div class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1">
-          <button v-for="l in availableLangs" :key="l" @click="setLang(l)" :class="[ 
+        <div class="flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full p-1">
+          <button v-for="l in availableLangs" :key="l" @click="setLang(l)" :class="[
             'px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300',
             lang === l
               ? 'bg-white text-emerald-900 shadow-md'
@@ -39,7 +39,8 @@
           <div
             class="inline-flex items-center gap-2 bg-emerald-500/15 border border-emerald-400/20 text-emerald-300 text-[11px] sm:text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full mb-4 sm:mb-5">
             <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
             {{ t("hero.badge") }}
@@ -168,8 +169,8 @@
                   <label :class="labelClass">
                     {{ t("applyForm.step1Fields.businessName") }}
                   </label>
-                  <input v-model="form.name" type="text" :placeholder="t('applyForm.step1Fields.businessNamePlaceholder')"
-                    :class="fieldClass('name')" />
+                  <input v-model="form.name" type="text"
+                    :placeholder="t('applyForm.step1Fields.businessNamePlaceholder')" :class="fieldClass('name')" />
                   <p v-if="fieldErrors.name" :class="errorClass">
                     {{ fieldErrors.name }}
                   </p>
@@ -214,7 +215,8 @@
                   <label :class="labelClass">
                     {{ t("applyForm.step1Fields.responsiblePerson") }}
                   </label>
-                  <input v-model="form.contact" type="text" :placeholder="t('applyForm.step1Fields.responsiblePersonPlaceholder')"
+                  <input v-model="form.contact" type="text"
+                    :placeholder="t('applyForm.step1Fields.responsiblePersonPlaceholder')"
                     :class="fieldClass('contact')" />
                   <p v-if="fieldErrors.contact" :class="errorClass">
                     {{ fieldErrors.contact }}
@@ -225,7 +227,8 @@
                   <label :class="labelClass">
                     {{ t("applyForm.step1Fields.aboutBusiness") }}
                   </label>
-                  <textarea v-model="form.about" rows="2" :placeholder="t('applyForm.step1Fields.aboutBusinessPlaceholder')"
+                  <textarea v-model="form.about" rows="2"
+                    :placeholder="t('applyForm.step1Fields.aboutBusinessPlaceholder')"
                     :class="fieldClass('about') + ' resize-none'" />
                   <p v-if="fieldErrors.about" :class="errorClass">
                     {{ fieldErrors.about }}
@@ -240,8 +243,8 @@
                     <label :class="labelClass">
                       {{ t("applyForm.step2Fields.phone") }}
                     </label>
-                    <input v-model="form.phone" type="tel" inputmode="tel" :placeholder="t('applyForm.step2Fields.phonePlaceholder')"
-                      :class="fieldClass('phone')" />
+                    <input v-model="form.phone" type="tel" inputmode="tel"
+                      :placeholder="t('applyForm.step2Fields.phonePlaceholder')" :class="fieldClass('phone')" />
                     <p v-if="fieldErrors.phone" :class="errorClass">
                       {{ fieldErrors.phone }}
                     </p>
@@ -250,41 +253,31 @@
                     <label :class="labelClass">
                       {{ t("applyForm.step2Fields.email") }}
                     </label>
-                    <input v-model="form.email" type="email" inputmode="email" :placeholder="t('applyForm.step2Fields.emailPlaceholder')"
-                      :class="fieldClass('email')" />
+                    <input v-model="form.email" type="email" inputmode="email"
+                      :placeholder="t('applyForm.step2Fields.emailPlaceholder')" :class="fieldClass('email')" />
                     <p v-if="fieldErrors.email" :class="errorClass">
                       {{ fieldErrors.email }}
                     </p>
                   </div>
                 </div>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label :class="labelClass">
                       {{ t("applyForm.step2Fields.instagram") }}
                     </label>
-                    <input
-                      v-model="form.instagram"
-                      type="text"
-                      :placeholder="t('applyForm.step2Fields.instagramPlaceholder')"
-                      :class="fieldClass()"
-                      @focus="onInstagramFocus"
-                      @input="onInstagramInput"
-                      @blur="onInstagramBlur"
-                    />
+                    <input v-model="form.instagram" type="text"
+                      :placeholder="t('applyForm.step2Fields.instagramPlaceholder')" :class="fieldClass()"
+                      @focus="onInstagramFocus" @input="onInstagramInput" @blur="onInstagramBlur" />
                     <p v-if="fieldErrors.instagram" :class="errorClass">{{ fieldErrors.instagram }}</p>
                   </div>
                   <div>
                     <label :class="labelClass">
                       {{ t("applyForm.step2Fields.telegramChannel") }}
                     </label>
-                    <input
-                      v-model="form.telegram"
-                      type="text"
-                      :placeholder="t('applyForm.step2Fields.telegramPlaceholder')"
-                      :class="fieldClass()"
-                      @blur="onTelegramBlur"
-                    />
+                    <input v-model="form.telegram" type="text"
+                      :placeholder="t('applyForm.step2Fields.telegramPlaceholder')" :class="fieldClass()"
+                      @blur="onTelegramBlur" />
                     <p v-if="fieldErrors.telegram" :class="errorClass">{{ fieldErrors.telegram }}</p>
                   </div>
                 </div>
@@ -293,15 +286,10 @@
                   <label :class="labelClass">
                     {{ t("applyForm.step2Fields.website") }}
                   </label>
-                    <input
-                      v-model="form.website"
-                      type="text"
-                      inputmode="url"
-                      :placeholder="t('applyForm.step2Fields.websitePlaceholder')"
-                      :class="fieldClass()"
-                      @blur="onWebsiteBlur"
-                    />
-                    <p v-if="fieldErrors.website" :class="errorClass">{{ fieldErrors.website }}</p>
+                  <input v-model="form.website" type="text" inputmode="url"
+                    :placeholder="t('applyForm.step2Fields.websitePlaceholder')" :class="fieldClass()"
+                    @blur="onWebsiteBlur" />
+                  <p v-if="fieldErrors.website" :class="errorClass">{{ fieldErrors.website }}</p>
                 </div>
               </div>
 
@@ -314,7 +302,7 @@
                       {{ t("applyForm.step3Fields.region") }}
                     </label>
                     <select v-model="form.viloyat" :class="fieldClass('viloyat', true)">
-                      <option value="">Tanlang</option>
+                      <option value="">{{ t("applyForm.step1Fields.categoryPlaceholder") }}</option>
                       <option v-for="v in viloyatOptions" :key="v.value" :value="v.value">
                         {{ v.label }}
                       </option>
@@ -332,11 +320,8 @@
                     <select v-model="form.tuman" :disabled="!form.viloyat" :class="fieldClass('tuman', true) +
                       ' disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed'
                       ">
-                      <option value="">
-                        {{
-                          form.viloyat ? "Tanlang" : "Avval viloyatni tanlang"
-                        }}
-                      </option>
+                      <option value="">{{ form.viloyat ? t("applyForm.step1Fields.categoryPlaceholder") :
+                        t("applyForm.step3Fields.chooseRegionFirst") }}</option>
                       <option v-for="tm in tumanOptions" :key="tm" :value="tm">
                         {{ tm }}
                       </option>
@@ -362,8 +347,24 @@
                         'Xaritadan qidirish',
                       )
                         ">
-                      <span v-if="isSearchingAddress" class="animate-spin text-sm">⏳</span>
-                      <span v-else>🔍</span>
+                      <span v-if="isSearchingAddress" class="animate-spin text-sm"><svg
+                          xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <g fill="currentColor">
+                            <path d="M13 6h-2v1a1 1 0 1 0 2 0z" />
+                            <path fill-rule="evenodd"
+                              d="M6 2v2h1v3a5 5 0 0 0 5 5a5 5 0 0 0-5 5v3H6v2h12v-2h-1v-3a5 5 0 0 0-5-5a5 5 0 0 0 5-5V4h1V2zm3 2h6v3a3 3 0 1 1-6 0zm0 13v3h6v-3a3 3 0 1 0-6 0"
+                              clip-rule="evenodd" />
+                          </g>
+                        </svg>
+                      </span>
+                      <span v-else><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M19 11.5a7.5 7.5 0 1 1-15 0a7.5 7.5 0 0 1 15 0m-2.107 5.42l3.08 3.08" />
+                        </svg>
+                      </span>
                     </button>
                   </div>
                   <p v-if="fieldErrors.address" :class="errorClass">
@@ -428,7 +429,7 @@
                       {{ t("applyForm.step3Fields.workingDays") }}
                     </label>
                     <select v-model="form.ish_kunlari" :class="fieldClass('ish_kunlari', true)">
-                      <option value="">Tanlang</option>
+                      <option value="">{{ t("applyForm.step1Fields.categoryPlaceholder") }}</option>
                       <option v-for="k in ishKunlariOptions" :key="k.value" :value="k.value">
                         {{ k.label }}
                       </option>
@@ -525,7 +526,7 @@
                       {{ t("applyForm.step4Fields.additionalType") }}
                     </label>
                     <select v-model="form.additional_type" :class="fieldClass('additional_type', true)">
-                      <option value="">Tanlang</option>
+                      <option value="">{{ t("applyForm.step1Fields.categoryPlaceholder") }}</option>
                       <option v-for="a in additionalTypeOptions" :key="a.value" :value="a.value">
                         {{ a.label }}
                       </option>
@@ -649,7 +650,7 @@
                  yuboriladi. -->
             <div class="mb-5 rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-4">
               <p class="text-xs text-emerald-700 mb-1">
-                {{ t("applyForm.smsNotice", "Admin arizangizni tasdiqlagach, quyidagi raqamga Savin tomonidan SMS xabar yuboriladi:") }}
+                {{ t("applyForm.smsNotice", "Admin arizangizni tasdiqlagach, quyidagi raqamga Savin tomonidan SMS xabar yuboriladi: ") }}
               </p>
               <p class="text-lg font-bold text-emerald-800 tracking-wide">
                 {{ submittedPhone }}
@@ -996,7 +997,7 @@ watch(
 // destroyMap) atayin avvalgi Yandex versiyasi bilan bir xil nom va xatti-harakatni
 // saqlaydi — shablon (template) va boshqa kod o'zgarishsiz ishlayveradi.
 
-  const NOMINATIM_BASE = "https://nominatim.openstreetmap.org";
+const NOMINATIM_BASE = "https://nominatim.openstreetmap.org";
 
 const mapRef = ref(null);
 const mapReady = ref(false);
@@ -1300,7 +1301,12 @@ function isValidWebsite(val) {
 
 // Input handlers / normalizers
 function onInstagramFocus() {
-  if (!form.value.instagram) form.value.instagram = "@";
+  const v = (form.value.instagram || "").toString();
+  if (!v) {
+    form.value.instagram = "@";
+    return;
+  }
+  if (!v.startsWith("@")) form.value.instagram = `@${v}`;
 }
 
 function onInstagramInput(e) {
@@ -1309,9 +1315,10 @@ function onInstagramInput(e) {
     form.value.instagram = "";
     return;
   }
-  // Ensure single leading @ and no spaces at start
-  const cleaned = raw.replace(/^@+/, "@").replace(/\s+/g, "");
-  form.value.instagram = cleaned;
+  // Remove spaces and ensure a single leading @
+  const noSpaces = raw.replace(/\s+/g, "");
+  const withoutAt = noSpaces.replace(/^@+/, "");
+  form.value.instagram = `@${withoutAt}`;
 }
 
 function onInstagramBlur() {

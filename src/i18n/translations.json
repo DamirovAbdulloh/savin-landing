@@ -247,6 +247,8 @@
       "step3Fields": {
         "region": "Region *",
         "regionDefault": "Tashkent city",
+        "mapLabel": "Mark exact location on the map *",
+        "searchOnMap": "Search on map",
         "cityDistrict": "City / District *",
         "cityDistrictDefault": "Chilonzor district",
         "fullAddress": "Full address *",
@@ -290,6 +292,9 @@
         "panelPasswordHint": "At least 6 characters (letters or digits)"
       },
       "errors": {
+        "invalidInstagram": "Please enter Instagram username starting with @.",
+        "invalidTelegram": "Please enter Telegram channel as a t.me link.",
+        "invalidWebsite": "Please enter a valid website URL (e.g. https://example.uz).",
         "requiredBusinessName": "Please enter the business name.",
         "selectCategory": "Please select a category.",
         "selectType": "Please select the business type.",
@@ -578,6 +583,8 @@
       "step3Fields": {
         "region": "Viloyat *",
         "regionDefault": "Toshkent shahri",
+        "mapLabel": "Xaritada aniq joylashuvni belgilang *",
+        "searchOnMap": "Xaritadan qidirish",
         "cityDistrict": "Shahar / Tuman *",
         "cityDistrictDefault": "Chilonzor tumani",
         "fullAddress": "To'liq manzil *",
@@ -621,6 +628,9 @@
         "panelPasswordHint": "Kamida 6 ta belgi (harf yoki raqam)"
       },
       "errors": {
+        "invalidInstagram": "Iltimos, Instagram foydalanuvchi nomini @belgi bilan kiriting.",
+        "invalidTelegram": "Iltimos, Telegram kanaliga t.me linkini kiriting.",
+        "invalidWebsite": "Iltimos to'g'ri veb-sayt manzilini kiriting (masalan, https://example.uz).",
         "requiredBusinessName": "Biznes nomini kiriting.",
         "selectCategory": "Kategoriyani tanlang.",
         "selectType": "Biznes turini tanlang.",
@@ -909,6 +919,8 @@
       "step3Fields": {
         "region": "Область *",
         "regionDefault": "город Ташкент",
+        "mapLabel": "Отметьте точное местоположение на карте *",
+        "searchOnMap": "Поиск на карте",
         "cityDistrict": "Город / Район *",
         "cityDistrictDefault": "Чиланзарский район",
         "fullAddress": "Полный адрес *",
@@ -952,6 +964,9 @@
         "panelPasswordHint": "Не менее 6 символов (буквы или цифры)"
       },
       "errors": {
+        "invalidInstagram": "Пожалуйста, укажите имя пользователя Instagram, начиная с @.",
+        "invalidTelegram": "Пожалуйста, укажите Telegram-канал в виде ссылки t.me.",
+        "invalidWebsite": "Пожалуйста, укажите корректный URL сайта (например, https://example.uz).",
         "requiredBusinessName": "Пожалуйста, укажите название бизнеса.",
         "selectCategory": "Пожалуйста, выберите категорию.",
         "selectType": "Пожалуйста, выберите тип бизнеса.",
