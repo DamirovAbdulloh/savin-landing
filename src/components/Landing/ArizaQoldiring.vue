@@ -543,8 +543,13 @@
                     <label :class="labelClass">
                       {{ t("applyForm.step4Fields.panelLogin") }}
                     </label>
-                    <input v-model="form.panel_login" type="email" autocomplete="off" placeholder="example@savin.uz"
-                      :class="fieldClass('panel_login')" />
+                    <div class="flex items-center gap-2">
+                      <input v-model="form.panel_login_local" type="text" autocomplete="off" placeholder="mybusiness"
+                        :class="fieldClass('panel_login') + ' rounded-r-none pr-2'" />
+                      <span class="inline-flex items-center px-3 bg-gray-50 border border-gray-200 rounded-l-none rounded-xl text-sm text-gray-500">
+                        @savin.uz
+                      </span>
+                    </div>
                     <!-- Jonli bandlik holati -->
                     <p v-if="loginCheckStatus === 'checking'" class="text-[11px] sm:text-xs text-gray-400 mt-1">
                       {{ t("applyForm.step4Fields.panelLoginChecking") }}
@@ -820,6 +825,7 @@ const fieldErrors = reactive({
   additional_type: "",
   panel_login: "",
   panel_password: "",
+  panel_login_local: "",
 });
 
 function clearFieldErrors(keys) {
@@ -990,6 +996,32 @@ watch(
   },
 );
 
+// Keep local part (editable) in sync with the full panel_login (readonly domain)
+watch(
+  () => form.value.panel_login_local,
+  (local) => {
+    const l = (local || "").trim().toLowerCase();
+    if (!l) {
+      form.value.panel_login = "";
+      return;
+    }
+    form.value.panel_login = `${l}@savin.uz`;
+  },
+);
+
+// If full panel_login changes from elsewhere (prefill), update local part
+watch(
+  () => form.value.panel_login,
+  (full) => {
+    if (!full) {
+      form.value.panel_login_local = "";
+      return;
+    }
+    const parts = full.split("@");
+    form.value.panel_login_local = parts[0] || "";
+  },
+);
+
 // ---------------- Xarita (OpenStreetMap + Leaflet, API key kerak emas) ----------------
 // Avval Yandex Maps ishlatilgan edi, lekin API key olish muammo bo'lgani uchun
 // bepul va keysiz OpenStreetMap (Leaflet) + Nominatim (geokodlash) ga o'tkazildi.
@@ -1015,7 +1047,7 @@ const LocateControl = L.Control.extend({
     const container = L.DomUtil.create("div", "leaflet-bar leaflet-control");
     const button = L.DomUtil.create("a", "", container);
     button.href = "#";
-    button.title = "Joriy joylashuvim";
+    button.title = t("applyForm.step3Fields.locateButton");
     button.innerHTML = "📍";
     button.style.display = "flex";
     button.style.alignItems = "center";
@@ -1105,7 +1137,7 @@ async function initMap() {
     // Foydalanuvchi rejimni almashtira oladi: Sputnik <-> Ko'cha
     L.control
       .layers(
-        { "🛰 Sputnik": hybrid, "🗺 Ko'cha (do'kon/klinikalar)": streets },
+        { [t("applyForm.step3Fields.mapLayerSatellite")]: hybrid, [t("applyForm.step3Fields.mapLayerStreets")]: streets },
         null,
         { position: "topright", collapsed: false },
       )
@@ -1434,7 +1466,18 @@ function validateStep2() {
   }
 
   if (!form.value.website || !isValidWebsite(form.value.website)) {
-    fieldErrors.website = tt("applyForm.errors.invalidWebsite", "Iltimos to'g'ri veb-sayt manzilini kiriting (masalan, https://example.uz).");
+    // Build a helpful example based on user's input
+    const raw = (form.value.website || "").trim();
+    let host = raw.replace(/^(https?:\/\/)/i, "").replace(/^www\./i, "").replace(/\/+$/g, "");
+    if (!host) host = "biznes";
+    if (!host.includes('.')) {
+      host = `www.${host}.uz`;
+    } else if (!/^www\./i.test(host)) {
+      host = `www.${host}`;
+    }
+    const exampleUrl = /^https?:\/\//i.test(raw) ? `https://${host}` : `https://${host}`;
+    const prefix = tt("applyForm.errors.invalidWebsitePrefix", "Website address is invalid");
+    fieldErrors.website = `${prefix} (e.g. ${exampleUrl}).`;
     ok = false;
   }
 
@@ -1660,6 +1703,7 @@ function resetForm() {
     min_sum: 50000,
     additional_type: "",
     panel_login: "",
+    panel_login_local: "",
     panel_password: "",
   };
   loginCheckStatus.value = "";
